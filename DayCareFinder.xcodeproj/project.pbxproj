@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3832632179403300A551A3 /* NewDayCareViewController.swift */; };
 		7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */; };
 		7F8BE94121768102005C38EF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8BE94021768102005C38EF /* SplitViewController.swift */; };
 		7FA4B709213CBC9F0085E5D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B708213CBC9F0085E5D8 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F3832632179403300A551A3 /* NewDayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayCareViewController.swift; sourceTree = "<group>"; };
 		7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCareViewController.swift; sourceTree = "<group>"; };
 		7F8BE94021768102005C38EF /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		7FA4B705213CBC9F0085E5D8 /* DayCareFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayCareFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 			children = (
 				7FA4B70A213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift */,
 				7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */,
+				7F3832632179403300A551A3 /* NewDayCareViewController.swift */,
 				7F8BE94021768102005C38EF /* SplitViewController.swift */,
 			);
 			path = Controllers;
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */,
 				7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */,
 				7F8BE94121768102005C38EF /* SplitViewController.swift in Sources */,
 				7FA4B73D213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift in Sources */,

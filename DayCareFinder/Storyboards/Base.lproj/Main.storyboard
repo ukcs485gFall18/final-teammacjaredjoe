@@ -47,7 +47,7 @@
                                 <size key="customSize" width="335" height="45"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="MA9-lA-ATc" id="zRa-fb-qy9"/>
-                                    <segue destination="YR0-G4-Dv3" kind="showDetail" id="Lwm-xT-8QP"/>
+                                    <segue destination="YR0-G4-Dv3" kind="showDetail" identifier="Show" id="Lwm-xT-8QP"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -58,7 +58,13 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Day Cares" id="F2C-t4-uey">
                         <barButtonItem key="backBarButtonItem" title=" " id="oJX-Og-X9B"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QPB-zB-QH9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QPB-zB-QH9">
+                            <connections>
+                                <segue destination="B3s-Er-bYJ" kind="popoverPresentation" identifier="New" popoverAnchorBarButtonItem="QPB-zB-QH9" id="gsF-lt-zQc">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5m-Em-G6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,6 +178,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRD-UE-j5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-634.39999999999998" y="232.53373313343329"/>
+        </scene>
+        <!--Day Care-->
+        <scene sceneID="egC-FZ-9l6">
+            <objects>
+                <viewController title="Day Care" id="EMi-W7-LKd" customClass="NewDayCareViewController" customModule="DayCareFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n7e-Aw-yqr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUE-hc-aHA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1K-En-1zc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Day Care Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ct-pu-PpI">
+                                                <rect key="frame" x="112" y="291" width="151.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="4Ct-pu-PpI" firstAttribute="centerY" secondItem="l1K-En-1zc" secondAttribute="centerY" id="Rjw-IS-gUN"/>
+                                            <constraint firstItem="4Ct-pu-PpI" firstAttribute="centerX" secondItem="l1K-En-1zc" secondAttribute="centerX" id="rJ3-oo-fc7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="l1K-En-1zc" firstAttribute="leading" secondItem="qUE-hc-aHA" secondAttribute="leading" id="5t9-ow-FbB"/>
+                                    <constraint firstItem="l1K-En-1zc" firstAttribute="centerX" secondItem="qUE-hc-aHA" secondAttribute="centerX" id="C0f-PM-M2W"/>
+                                    <constraint firstItem="l1K-En-1zc" firstAttribute="centerY" secondItem="qUE-hc-aHA" secondAttribute="centerY" id="NvQ-gg-iC9"/>
+                                    <constraint firstItem="l1K-En-1zc" firstAttribute="top" secondItem="qUE-hc-aHA" secondAttribute="top" id="Pfr-Lu-2Ot"/>
+                                    <constraint firstAttribute="trailing" secondItem="l1K-En-1zc" secondAttribute="trailing" id="TvW-M9-Juh"/>
+                                    <constraint firstAttribute="bottom" secondItem="l1K-En-1zc" secondAttribute="bottom" id="m5h-aA-azz"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="bottom" secondItem="kqe-3T-4tK" secondAttribute="bottom" id="0w9-B4-rZt"/>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" id="88E-M8-JJ6"/>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="bottom" secondItem="kqe-3T-4tK" secondAttribute="bottom" id="C6t-8w-pbV"/>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" id="Sgy-vt-ch7"/>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="top" secondItem="kqe-3T-4tK" secondAttribute="top" id="jBk-2p-WyK"/>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="trailing" secondItem="kqe-3T-4tK" secondAttribute="trailing" id="kyN-OE-dpn"/>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="trailing" secondItem="kqe-3T-4tK" secondAttribute="trailing" id="vvk-qV-ixs"/>
+                            <constraint firstItem="qUE-hc-aHA" firstAttribute="top" secondItem="kqe-3T-4tK" secondAttribute="top" id="xWX-8U-1o8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kqe-3T-4tK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Day Care" id="553-Wd-KLl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="STp-Go-SFA">
+                            <connections>
+                                <action selector="touchCancelButton" destination="EMi-W7-LKd" id="OKK-0X-8d4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="zc7-8h-0S9"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nc6-Wk-wHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2217" y="-539"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yyu-De-XPo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B3s-Er-bYJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="X50-Ha-j2w">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EMi-W7-LKd" kind="relationship" relationship="rootViewController" id="TOW-21-wfR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ve-ZH-VJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1278" y="-539"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

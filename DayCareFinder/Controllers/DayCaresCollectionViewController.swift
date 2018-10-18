@@ -47,9 +47,11 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = super.collectionView.indexPathsForSelectedItems!.first!
-        let navigationController = segue.destination as! UINavigationController
-        let dayCareViewController = navigationController.topViewController as! DayCareViewController
-        dayCareViewController.dayCare = self.dayCares[indexPath.row]
+        if segue.identifier == "Show" {
+            let indexPath = super.collectionView.indexPathsForSelectedItems!.first!
+            let navigationController = segue.destination as! UINavigationController
+            let dayCareViewController = navigationController.topViewController as! DayCareViewController
+            dayCareViewController.dayCare = self.dayCares[indexPath.row]
+        }
     }
 }
