@@ -13,4 +13,9 @@ public struct DayCare: Codable {
     public let id: Int
     
     public let name: String
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+    }
 }
