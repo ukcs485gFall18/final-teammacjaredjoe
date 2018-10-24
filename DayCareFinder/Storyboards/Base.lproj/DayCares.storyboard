@@ -58,6 +58,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Day Cares" id="F2C-t4-uey">
                         <barButtonItem key="backBarButtonItem" title=" " id="oJX-Og-X9B"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="IrM-Lj-Xm5"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QPB-zB-QH9">
                             <connections>
                                 <segue destination="B3s-Er-bYJ" kind="popoverPresentation" identifier="New" popoverAnchorBarButtonItem="QPB-zB-QH9" id="gsF-lt-zQc">
