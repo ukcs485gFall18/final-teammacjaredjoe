@@ -33,25 +33,24 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     }
     
     @objc public func updateData() {
-        let url = URL(string: "http://localhost:3000/day_cares.json")!
-        URLSession.shared.dataTask(with: url) { data, request, error in
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            self.dayCares = try! decoder.decode([DayCare].self, from: data)
+        API.index(type: DayCare.self) { dayCares in
+            self.dayCares = dayCares ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.collectionView.refreshControl!.endRefreshing()
             }
-        } .resume()
+        }
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show" {
             let indexPath = super.collectionView.indexPathsForSelectedItems!.first!
-            let navigationController = segue.destination as! UINavigationController
-            let dayCareViewController = navigationController.topViewController as! DayCareViewController
+            let dayCareViewController = segue.destination as! DayCareViewController
             dayCareViewController.dayCare = self.dayCares[indexPath.row]
         }
+    }
+    
+    @IBAction public func unwindToDayCaresCollectionViewController(segue: UIStoryboardSegue) {
+        self.updateData()
     }
 }

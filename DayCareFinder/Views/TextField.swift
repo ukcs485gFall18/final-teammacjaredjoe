@@ -14,9 +14,7 @@ public class TextField: UITextField {
         super.draw(rect)
         super.borderStyle = .none
         super.layer.backgroundColor = UIColor.darkGray.cgColor
-        super.layer.shadowColor = UIColor.lightGray.cgColor
-        super.layer.shadowOffset = CGSize(width: 0, height: 1)
-        super.layer.shadowOpacity = 1.0
-        super.layer.shadowRadius = 0.0
+        super.layer.borderColor = UIColor.lightGray.cgColor
+        super.layer.borderWidth = 1.0
     }
 }

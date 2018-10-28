@@ -8,11 +8,15 @@
 
 import Foundation
 
-public struct DayCare: Codable {
+public struct DayCare: APIModel {
     
     public let id: Int
     
     public let name: String
+    
+    public static var modelName: String {
+        return "day_cares"
+    }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

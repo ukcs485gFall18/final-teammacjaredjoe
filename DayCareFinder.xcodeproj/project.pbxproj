@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F30FEDB21853F6300C4DA06 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30FEDA21853F6300C4DA06 /* API.swift */; };
+		7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30FEDC218540BA00C4DA06 /* APIModel.swift */; };
 		7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3832632179403300A551A3 /* NewDayCareViewController.swift */; };
 		7F38326A217958B800A551A3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F383269217958B800A551A3 /* TextField.swift */; };
 		7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */; };
-		7F8BE94121768102005C38EF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8BE94021768102005C38EF /* SplitViewController.swift */; };
 		7FA4B709213CBC9F0085E5D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B708213CBC9F0085E5D8 /* AppDelegate.swift */; };
 		7FA4B70B213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B70A213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift */; };
 		7FA4B70E213CBC9F0085E5D8 /* DayCares.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA4B70C213CBC9F0085E5D8 /* DayCares.storyboard */; };
@@ -40,10 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F30FEDA21853F6300C4DA06 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7F30FEDC218540BA00C4DA06 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		7F3832632179403300A551A3 /* NewDayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayCareViewController.swift; sourceTree = "<group>"; };
 		7F383269217958B800A551A3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCareViewController.swift; sourceTree = "<group>"; };
-		7F8BE94021768102005C38EF /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		7FA4B705213CBC9F0085E5D8 /* DayCareFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayCareFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA4B708213CBC9F0085E5D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FA4B70A213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaresCollectionViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +94,6 @@
 				7FA4B70A213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift */,
 				7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */,
 				7F3832632179403300A551A3 /* NewDayCareViewController.swift */,
-				7F8BE94021768102005C38EF /* SplitViewController.swift */,
 			);
 			path = DayCares;
 			sourceTree = "<group>";
@@ -102,6 +103,15 @@
 			children = (
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		7F30FED921853F5100C4DA06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7F30FEDA21853F6300C4DA06 /* API.swift */,
+				7F30FEDC218540BA00C4DA06 /* APIModel.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7FA4B6FC213CBC9F0085E5D8 = {
@@ -131,6 +141,7 @@
 				7FA4B70F213CBCA00085E5D8 /* Assets.xcassets */,
 				7FA4B736213CBD100085E5D8 /* Controllers */,
 				7FA4B714213CBCA00085E5D8 /* Info.plist */,
+				7F30FED921853F5100C4DA06 /* Helpers */,
 				7FA4B737213CBD270085E5D8 /* Models */,
 				7FA4B73B213CBD780085E5D8 /* Storyboards */,
 				7FA4B73A213CBD640085E5D8 /* Views */,
@@ -324,11 +335,12 @@
 			files = (
 				7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */,
 				7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */,
-				7F8BE94121768102005C38EF /* SplitViewController.swift in Sources */,
 				7F38326A217958B800A551A3 /* TextField.swift in Sources */,
 				7FA4B73D213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift in Sources */,
 				7FA4B739213CBD310085E5D8 /* DayCare.swift in Sources */,
+				7F30FEDB21853F6300C4DA06 /* API.swift in Sources */,
 				7FA4B70B213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift in Sources */,
+				7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */,
 				7FA4B709213CBC9F0085E5D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

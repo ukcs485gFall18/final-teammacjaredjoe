@@ -27,23 +27,33 @@ public class DayCareViewController: UIViewController {
         self.reloadData()
     }
     
+    @IBAction func touchTrashButton(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Are you sure?", message: "You can not undo this action.", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.destroyDayCare()
+        }))
+        self.present(alertController, animated: true)
+    }
+    
     @objc private func updateData() {
-        let url = URL(string: "http://localhost:3000/day_cares/\(self.dayCare!.id).json")!
-        URLSession.shared.dataTask(with: url) { data, request, error in
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            self.dayCare = try! decoder.decode(DayCare.self, from: data)
+        API.show(type: DayCare.self, id: self.dayCare!.id) { dayCare in
+            self.dayCare = dayCare
             DispatchQueue.main.async {
                 self.reloadData()
                 self.scrollView.refreshControl!.endRefreshing()
             }
-        } .resume()
+        }
     }
     
     private func reloadData() {
         DispatchQueue.main.async {
             self.nameLabel?.text = self.dayCare?.name
+        }
+    }
+    
+    private func destroyDayCare() {
+        API.destroy(object: self.dayCare!) { _ in
         }
     }
 }

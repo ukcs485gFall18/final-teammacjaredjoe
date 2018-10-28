@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JfC-R3-Ach">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qmp-1C-y62">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -47,7 +47,7 @@
                                 <size key="customSize" width="335" height="45"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="MA9-lA-ATc" id="zRa-fb-qy9"/>
-                                    <segue destination="YR0-G4-Dv3" kind="showDetail" identifier="Show" id="Lwm-xT-8QP"/>
+                                    <segue destination="Wzh-UP-6UV" kind="show" identifier="Show" id="h8z-y9-TPq"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -61,16 +61,14 @@
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="IrM-Lj-Xm5"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QPB-zB-QH9">
                             <connections>
-                                <segue destination="B3s-Er-bYJ" kind="popoverPresentation" identifier="New" popoverAnchorBarButtonItem="QPB-zB-QH9" id="gsF-lt-zQc">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="LwC-58-cAs" kind="presentation" id="sts-xB-SSl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5m-Em-G6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="-539"/>
+            <point key="canvasLocation" x="302" y="-559"/>
         </scene>
         <!--Day Care-->
         <scene sceneID="C6G-0g-Ouw">
@@ -123,15 +121,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zcv-13-dtw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Day Care" id="74Z-0p-wGA"/>
+                    <navigationItem key="navigationItem" title="Day Care" id="74Z-0p-wGA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="kVD-ex-biW">
+                            <connections>
+                                <action selector="touchTrashButton:" destination="Wzh-UP-6UV" id="jbo-f0-rnj"/>
+                                <segue destination="K68-AG-75M" kind="unwind" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="JR0-4Y-hKA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameLabel" destination="abB-0x-aVP" id="U5x-pf-uUe"/>
                         <outlet property="scrollView" destination="jt0-5J-2xA" id="J8S-yP-KyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEc-r5-DiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="K68-AG-75M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="304.80000000000001" y="232.53373313343329"/>
+            <point key="canvasLocation" x="1278" y="-276"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iac-G2-gCn">
@@ -147,38 +153,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpp-21-ufU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-633" y="-539"/>
-        </scene>
-        <!--Split View Controller-->
-        <scene sceneID="cf2-kk-nZU">
-            <objects>
-                <splitViewController id="JfC-R3-Ach" customClass="SplitViewController" customModule="DayCareFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="Qmp-1C-y62" kind="relationship" relationship="masterViewController" id="D81-ZV-OxY"/>
-                        <segue destination="YR0-G4-Dv3" kind="relationship" relationship="detailViewController" id="2n3-S3-MsF"/>
-                    </connections>
-                </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9pI-Ly-wBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1586" y="-206"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Bee-bs-rj9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YR0-G4-Dv3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="aBl-oL-zC0">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Wzh-UP-6UV" kind="relationship" relationship="rootViewController" id="7Sj-5E-hjo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cRD-UE-j5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-634.39999999999998" y="232.53373313343329"/>
+            <point key="canvasLocation" x="-634" y="-559"/>
         </scene>
         <!--Day Care-->
         <scene sceneID="egC-FZ-9l6">
@@ -188,36 +163,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wy1-wH-W1o" customClass="TextField" customModule="DayCareFinder" customModuleProvider="target">
-                                <rect key="frame" x="8" y="102" width="359" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wy1-wH-W1o" customClass="TextField" customModule="DayCareFinder" customModuleProvider="target">
+                                <rect key="frame" x="8" y="108" width="359" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="I0Y-8y-wWa"/>
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="EMi-W7-LKd" id="1sH-QH-ddu"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOq-Ml-GJx">
+                                <rect key="frame" x="16" y="79.5" width="45" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wy1-wH-W1o" firstAttribute="top" secondItem="kqe-3T-4tK" secondAttribute="top" constant="38" id="N2e-LL-yOp"/>
+                            <constraint firstItem="wy1-wH-W1o" firstAttribute="top" secondItem="kqe-3T-4tK" secondAttribute="top" constant="44" id="N2e-LL-yOp"/>
+                            <constraint firstItem="wy1-wH-W1o" firstAttribute="top" secondItem="YOq-Ml-GJx" secondAttribute="bottom" constant="8" symbolic="YES" id="OMv-oG-q1G"/>
+                            <constraint firstItem="YOq-Ml-GJx" firstAttribute="leading" secondItem="n7e-Aw-yqr" secondAttribute="leadingMargin" id="RiA-id-ebm"/>
                             <constraint firstItem="wy1-wH-W1o" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="8" id="bc6-mn-mY4"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YOq-Ml-GJx" secondAttribute="trailing" symbolic="YES" id="cD2-Gt-h9C"/>
                             <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="wy1-wH-W1o" secondAttribute="trailing" constant="8" id="n9C-JV-s4u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kqe-3T-4tK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Day Care" id="553-Wd-KLl">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="STp-Go-SFA">
+                    <navigationItem key="navigationItem" id="BLQ-hS-1n6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sql-z3-KII">
                             <connections>
-                                <action selector="touchCancelButton:" destination="EMi-W7-LKd" id="z3T-SO-xsZ"/>
+                                <segue destination="jTP-KC-a2Z" kind="unwind" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="a5e-rJ-0Kg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="zc7-8h-0S9">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="EVa-tK-73B">
                             <connections>
-                                <action selector="touchDoneButton:" destination="EMi-W7-LKd" id="ANO-qw-2ND"/>
+                                <segue destination="jTP-KC-a2Z" kind="unwind" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="jLq-Oe-Ex7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,29 +210,27 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nc6-Wk-wHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jTP-KC-a2Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2216.8000000000002" y="-539.28035982008998"/>
+            <point key="canvasLocation" x="2216.8000000000002" y="-990.85457271364328"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Yyu-De-XPo">
+        <scene sceneID="sjh-5n-30d">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B3s-Er-bYJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" id="LwC-58-cAs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="X50-Ha-j2w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Rqw-1z-RZO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="EMi-W7-LKd" kind="relationship" relationship="rootViewController" id="TOW-21-wfR"/>
+                        <segue destination="EMi-W7-LKd" kind="relationship" relationship="rootViewController" id="uTI-gq-wwQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ve-ZH-VJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J6D-jI-XTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="-539"/>
+            <point key="canvasLocation" x="1277.5999999999999" y="-990.85457271364328"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Lwm-xT-8QP"/>
-    </inferredMetricsTieBreakers>
 </document>

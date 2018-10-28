@@ -16,8 +16,7 @@ public class DayCaresCollectionViewCell: UICollectionViewCell {
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.contentView.layer.borderColor = UIColor.lightGray.cgColor
-        self.contentView.layer.borderWidth = 1.0
-        self.contentView.layer.cornerRadius = 3.0
+        super.contentView.layer.borderColor = UIColor.lightGray.cgColor
+        super.contentView.layer.borderWidth = 1.0
     }
 }

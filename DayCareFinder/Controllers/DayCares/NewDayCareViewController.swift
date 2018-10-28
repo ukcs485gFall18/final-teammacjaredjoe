@@ -12,14 +12,6 @@ public class NewDayCareViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: TextField!
     
-    @IBAction func touchDoneButton(_ sender: UIBarButtonItem) {
-        self.createDayCare()
-    }
-    
-    @IBAction public func touchCancelButton(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     private func createDayCare() {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
@@ -35,13 +27,5 @@ public class NewDayCareViewController: UIViewController {
             guard error == nil else { return }
             self.dismiss(animated: true, completion: nil)
         } .resume()
-    }
-}
-
-extension NewDayCareViewController: UITextFieldDelegate {
-    
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.createDayCare()
-        return true
     }
 }
