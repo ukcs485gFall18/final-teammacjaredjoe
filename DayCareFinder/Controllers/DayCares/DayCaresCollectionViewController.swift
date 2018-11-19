@@ -33,7 +33,7 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     }
     
     @objc public func updateData() {
-        API.index(type: DayCare.self) { dayCares in
+        DayCare.all { dayCares in
             self.dayCares = dayCares ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -44,8 +44,8 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show" {
-            let indexPath = super.collectionView.indexPathsForSelectedItems!.first!
             let dayCareViewController = segue.destination as! DayCareViewController
+            let indexPath = super.collectionView.indexPathsForSelectedItems!.first!
             dayCareViewController.dayCare = self.dayCares[indexPath.row]
         }
     }
