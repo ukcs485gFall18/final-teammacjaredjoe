@@ -1,5 +1,5 @@
 //
-//  APIPathRepresentable.swift
+//  APIModel.swift
 //  DayCareFinder
 //
 //  Created by Jared Payne on 10/27/18.

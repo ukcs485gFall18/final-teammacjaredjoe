@@ -12,7 +12,7 @@ public struct DayCare: APIModel {
     
     public let id: Int?
     
-    public let name: String
+    public let name: String?
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
