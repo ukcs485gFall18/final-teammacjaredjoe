@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F30FEDB21853F6300C4DA06 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30FEDA21853F6300C4DA06 /* API.swift */; };
 		7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30FEDC218540BA00C4DA06 /* APIModel.swift */; };
 		7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3832632179403300A551A3 /* NewDayCareViewController.swift */; };
 		7F38326A217958B800A551A3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F383269217958B800A551A3 /* TextField.swift */; };
+		7F4389C521A4D9A2002C430D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4389C421A4D9A2002C430D /* UserTests.swift */; };
+		7F4389C821A4E0AD002C430D /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4389C721A4E0AD002C430D /* URLRequest.swift */; };
 		7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */; };
 		7FA4B709213CBC9F0085E5D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B708213CBC9F0085E5D8 /* AppDelegate.swift */; };
 		7FA4B70B213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B70A213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift */; };
@@ -21,6 +22,10 @@
 		7FA4B729213CBCA00085E5D8 /* DayCareFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B728213CBCA00085E5D8 /* DayCareFinderUITests.swift */; };
 		7FA4B739213CBD310085E5D8 /* DayCare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B738213CBD310085E5D8 /* DayCare.swift */; };
 		7FA4B73D213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B73C213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift */; };
+		7FABC73621A391A00020A4C1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FABC73521A391A00020A4C1 /* SignInViewController.swift */; };
+		7FABC73821A391C20020A4C1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FABC73721A391C20020A4C1 /* SignUpViewController.swift */; };
+		7FC01ADE21A5E2AB009D0589 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADD21A5E2AB009D0589 /* API.swift */; };
+		7FC01AE021A607D0009D0589 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADF21A607D0009D0589 /* String.swift */; };
 		7FF6C7D421A280B9009521ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6C7D321A280B9009521ED /* User.swift */; };
 		7FF6C7D621A284A0009521ED /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6C7D521A284A0009521ED /* Users.storyboard */; };
 /* End PBXBuildFile section */
@@ -43,10 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F30FEDA21853F6300C4DA06 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7F30FEDC218540BA00C4DA06 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		7F3832632179403300A551A3 /* NewDayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayCareViewController.swift; sourceTree = "<group>"; };
 		7F383269217958B800A551A3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		7F4389C421A4D9A2002C430D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		7F4389C721A4E0AD002C430D /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCareViewController.swift; sourceTree = "<group>"; };
 		7FA4B705213CBC9F0085E5D8 /* DayCareFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayCareFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA4B708213CBC9F0085E5D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +69,12 @@
 		7FA4B72A213CBCA00085E5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FA4B738213CBD310085E5D8 /* DayCare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCare.swift; sourceTree = "<group>"; };
 		7FA4B73C213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaresCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FABC73521A391A00020A4C1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7FABC73721A391C20020A4C1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7FC01ADD21A5E2AB009D0589 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7FC01ADF21A607D0009D0589 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7FF6C7D321A280B9009521ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		7FF6C7D521A284A0009521ED /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
+		7FF6C7D521A284A0009521ED /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Users.storyboard; path = Base.lproj/Users.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,17 +115,27 @@
 		7F2E9FF2217FB25E00615BEF /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				7FABC73521A391A00020A4C1 /* SignInViewController.swift */,
+				7FABC73721A391C20020A4C1 /* SignUpViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
 		};
-		7F30FED921853F5100C4DA06 /* Helpers */ = {
+		7F4389C321A4D98E002C430D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7F30FEDA21853F6300C4DA06 /* API.swift */,
-				7F30FEDC218540BA00C4DA06 /* APIModel.swift */,
+				7F4389C421A4D9A2002C430D /* UserTests.swift */,
 			);
-			path = Helpers;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7F4389C621A4E07F002C430D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7F4389C721A4E0AD002C430D /* URLRequest.swift */,
+				7FC01ADF21A607D0009D0589 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7FA4B6FC213CBC9F0085E5D8 = {
@@ -145,7 +165,8 @@
 				7FA4B70F213CBCA00085E5D8 /* Assets.xcassets */,
 				7FA4B736213CBD100085E5D8 /* Controllers */,
 				7FA4B714213CBCA00085E5D8 /* Info.plist */,
-				7F30FED921853F5100C4DA06 /* Helpers */,
+				7FC01ADC21A5E29D009D0589 /* Helpers */,
+				7F4389C621A4E07F002C430D /* Extensions */,
 				7FA4B737213CBD270085E5D8 /* Models */,
 				7FA4B73B213CBD780085E5D8 /* Storyboards */,
 				7FA4B73A213CBD640085E5D8 /* Views */,
@@ -156,6 +177,7 @@
 		7FA4B71C213CBCA00085E5D8 /* DayCareFinderTests */ = {
 			isa = PBXGroup;
 			children = (
+				7F4389C321A4D98E002C430D /* Models */,
 				7FA4B71D213CBCA00085E5D8 /* DayCareFinderTests.swift */,
 				7FA4B71F213CBCA00085E5D8 /* Info.plist */,
 			);
@@ -183,6 +205,7 @@
 		7FA4B737213CBD270085E5D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F30FEDC218540BA00C4DA06 /* APIModel.swift */,
 				7FA4B738213CBD310085E5D8 /* DayCare.swift */,
 				7FF6C7D321A280B9009521ED /* User.swift */,
 			);
@@ -206,6 +229,14 @@
 				7FF6C7D521A284A0009521ED /* Users.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7FC01ADC21A5E29D009D0589 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7FC01ADD21A5E2AB009D0589 /* API.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,13 +374,17 @@
 				7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */,
 				7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */,
 				7F38326A217958B800A551A3 /* TextField.swift in Sources */,
+				7F4389C821A4E0AD002C430D /* URLRequest.swift in Sources */,
+				7FC01AE021A607D0009D0589 /* String.swift in Sources */,
 				7FA4B73D213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift in Sources */,
 				7FA4B739213CBD310085E5D8 /* DayCare.swift in Sources */,
-				7F30FEDB21853F6300C4DA06 /* API.swift in Sources */,
 				7FA4B70B213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift in Sources */,
 				7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */,
+				7FC01ADE21A5E2AB009D0589 /* API.swift in Sources */,
 				7FF6C7D421A280B9009521ED /* User.swift in Sources */,
 				7FA4B709213CBC9F0085E5D8 /* AppDelegate.swift in Sources */,
+				7FABC73621A391A00020A4C1 /* SignInViewController.swift in Sources */,
+				7FABC73821A391C20020A4C1 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4389C521A4D9A2002C430D /* UserTests.swift in Sources */,
 				7FA4B71E213CBCA00085E5D8 /* DayCareFinderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,7 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7V5FHJ869W;
 				INFOPLIST_FILE = DayCareFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -541,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7V5FHJ869W;
 				INFOPLIST_FILE = DayCareFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

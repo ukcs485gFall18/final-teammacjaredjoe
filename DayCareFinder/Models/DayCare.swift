@@ -8,14 +8,13 @@
 
 import Foundation
 
-public struct DayCare: APIModel {
+public class DayCare: APIModel {
     
-    public let id: Int?
+    public var id: Int?
     
-    public let name: String?
+    public var createdAt: String?
     
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(name, forKey: .name)
-    }
+    public var updatedAt: String?
+    
+    public var name: String?
 }

@@ -1,8 +1,8 @@
 //
-//  API
+//  API.swift
 //  DayCareFinder
 //
-//  Created by Jared Payne on 10/27/18.
+//  Created by Jared Payne on 11/21/18.
 //  Copyright © 2018 Jared Payne. All rights reserved.
 //
 
@@ -10,50 +10,59 @@ import Foundation
 
 public class API {
     
-    public static let baseURL: URL = URL(string: "https://day-care-finder.herokuapp.com")!
+    public static let url: URL = URL(string: "https://day-care-finder.herokuapp.com")!
     
-    public static func index<T>(type: T.Type, completionHandler: @escaping ([T]?) -> ()) where T: APIModel {
-        let url = URL(string: "\(type.modelNamespace).json", relativeTo: API.baseURL)!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let objectsData = data else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let objects = try? decoder.decode([T].self, from: objectsData)
-            completionHandler(objects)
-        } .resume()
+    public static var sessionURL: URL {
+        return API.url.appendingPathComponent("sign_in")
     }
     
-    public static func show<T>(type: T.Type, id: Int, completionHandler: @escaping (T?) -> ()) where T: APIModel {
-        let url = URL(string: "\(type.modelNamespace)/\(id).json", relativeTo: API.baseURL)!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let objectData = data else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let object = try? decoder.decode(T.self, from: objectData)
-            completionHandler(object)
-        } .resume()
-    }
-    
-    public static func create<T>(object: T, completionHandler: @escaping (Error?) -> ()) where T: APIModel {
+    private static var encoder: JSONEncoder {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
-        var request = URLRequest(url: URL(string: "\(type(of: object).modelNamespace).json", relativeTo: API.baseURL)!)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpBody = try? encoder.encode(object)
-        request.httpMethod = "POST"
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            completionHandler(error)
-        } .resume()
+        return encoder
     }
     
-    public static func destroy<T>(object: T, completionHandler: @escaping (Error?) -> ()) where T: APIModel {
-        var request =  URLRequest(url: URL(string: "\(type(of: object).modelNamespace)/\(object.id!).json", relativeTo: API.baseURL)!)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpMethod = "DELETE"
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            completionHandler(error)
-        } .resume()
+    private static var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }
+    
+    public static func encode<T: APIModel>(_ object: T) -> Data {
+        return try! API.encoder.encode([API.camelCaseClassName(object): object])
+    }
+    
+    public static func encode<T: APIModel>(_ objects: [T]) -> Data {
+        let elementClassName = API.camelCaseClassName(type(of: objects).Element.self)
+        return try! API.encoder.encode([elementClassName.pluralized: objects])
+    }
+    
+    public static func decode<T: APIModel>(_ type: T.Type, from data: Data) -> T {
+        return try! API.decoder.decode(type, from: data)
+    }
+    
+    public static func decode<T: APIModel>(_ type: [T].Type, from data: Data) -> [T] {
+        return try! API.decoder.decode(type, from: data)
+    }
+    
+    public static func urlFor<T: APIModel>(_ type: T.Type) -> URL {
+        return self.url.appendingPathComponent(API.camelCaseClassName(type).pluralized)
+    }
+    
+    public static func urlFor<T: APIModel>(_ object: T) -> URL {
+        return self.urlFor(type(of: object)).appendingPathComponent(String(object.id!))
+    }
+    
+    private static func camelCaseClassName<T>(_ object: T) -> String {
+        return API.camelCaseClassName(type(of: object))
+    }
+    
+    private static func camelCaseClassName<T>(_ type: T.Type) -> String {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let jsonSymbols = CharacterSet(charactersIn: "[]{}:\"")
+        let className = String(String(describing: type).components(separatedBy: ".").last!)
+        let data = try! encoder.encode([className: ""])
+        return String(data: data, encoding: .utf8)!.trimmingCharacters(in: jsonSymbols)
     }
 }

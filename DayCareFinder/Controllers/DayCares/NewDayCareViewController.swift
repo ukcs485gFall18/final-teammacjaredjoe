@@ -13,11 +13,11 @@ public class NewDayCareViewController: UIViewController {
     @IBOutlet weak var nameTextField: TextField!
     
     private func createDayCare() {
-        let dayCare = DayCare(id: nil, name: self.nameTextField.text!)
-        DayCare.save(dayCare) { error in
-            guard let _ = error else {
+        let dayCare = DayCare()
+        dayCare.name = self.nameTextField.text!
+        dayCare.post { data, response, error in
+            if error == nil {
                 self.dismiss(animated: true)
-                return
             }
         }
     }

@@ -35,8 +35,7 @@ public class DayCareViewController: UIViewController {
     }
     
     @objc private func updateData() {
-        DayCare.find(id: self.dayCare!.id!) { dayCare in
-            self.dayCare = dayCare
+        self.dayCare?.get { data, response, error in
             DispatchQueue.main.async {
                 self.reloadData()
                 self.scrollView.refreshControl!.endRefreshing()
@@ -51,7 +50,7 @@ public class DayCareViewController: UIViewController {
     }
     
     private func destroyDayCare() {
-        DayCare.destroy(self.dayCare!) { error in
+        self.dayCare!.delete { data, response, error in
             guard let _ = error else {
                 self.dismiss(animated: true)
                 return
