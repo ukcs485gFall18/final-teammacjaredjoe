@@ -22,6 +22,10 @@ extension URLRequest {
         request.httpMethod = kind.rawValue
         request.httpBody = body
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let user = User.currentUser {
+            request.addValue(user.email!, forHTTPHeaderField: "X-User-Email")
+            request.addValue(user.authenticationToken!, forHTTPHeaderField: "X-User-Token")
+        }
         return request
     }
 }

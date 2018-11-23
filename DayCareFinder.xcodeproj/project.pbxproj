@@ -26,7 +26,6 @@
 		7FABC73821A391C20020A4C1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FABC73721A391C20020A4C1 /* SignUpViewController.swift */; };
 		7FC01ADE21A5E2AB009D0589 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADD21A5E2AB009D0589 /* API.swift */; };
 		7FC01AE021A607D0009D0589 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADF21A607D0009D0589 /* String.swift */; };
-		7FC01B2121A8A099009D0589 /* DayCareFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01B1F21A8A099009D0589 /* DayCareFinder.xcdatamodeld */; };
 		7FF6C7D421A280B9009521ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6C7D321A280B9009521ED /* User.swift */; };
 		7FF6C7D621A284A0009521ED /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6C7D521A284A0009521ED /* Users.storyboard */; };
 /* End PBXBuildFile section */
@@ -74,7 +73,6 @@
 		7FABC73721A391C20020A4C1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7FC01ADD21A5E2AB009D0589 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7FC01ADF21A607D0009D0589 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		7FC01B2021A8A099009D0589 /* DayCareFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DayCareFinder.xcdatamodel; sourceTree = "<group>"; };
 		7FF6C7D321A280B9009521ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FF6C7D521A284A0009521ED /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Users.storyboard; path = Base.lproj/Users.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,7 +243,6 @@
 		7FC01B1E21A8A05F009D0589 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				7FC01B1F21A8A099009D0589 /* DayCareFinder.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -391,7 +388,6 @@
 				7FA4B739213CBD310085E5D8 /* DayCare.swift in Sources */,
 				7FA4B70B213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift in Sources */,
 				7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */,
-				7FC01B2121A8A099009D0589 /* DayCareFinder.xcdatamodeld in Sources */,
 				7FC01ADE21A5E2AB009D0589 /* API.swift in Sources */,
 				7FF6C7D421A280B9009521ED /* User.swift in Sources */,
 				7FA4B709213CBC9F0085E5D8 /* AppDelegate.swift in Sources */,
@@ -724,19 +720,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7FC01B1F21A8A099009D0589 /* DayCareFinder.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7FC01B2021A8A099009D0589 /* DayCareFinder.xcdatamodel */,
-			);
-			currentVersion = 7FC01B2021A8A099009D0589 /* DayCareFinder.xcdatamodel */;
-			path = DayCareFinder.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7FA4B6FD213CBC9F0085E5D8 /* Project object */;
 }

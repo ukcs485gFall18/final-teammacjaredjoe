@@ -20,7 +20,8 @@ public protocol APIModel: Codable {
 extension APIModel {
     
     public static func all(completionHandler: (([Self]?) -> ())? = nil) {
-        URLSession.shared.dataTask(with: API.urlFor(self)) { data, response, error in
+        let request = URLRequest.make(kind: .get, url: API.urlFor(self), body: nil)
+        URLSession.shared.dataTask(with: request) { data, response, error in
             let models = API.decode([Self].self, from: data!)
             if let handler = completionHandler {
                 handler(models)
@@ -29,7 +30,8 @@ extension APIModel {
     }
     
     public func get(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
-        URLSession.shared.dataTask(with: API.urlFor(self)) { data, response, error in
+        let request = URLRequest.make(kind: .get, url: API.urlFor(self), body: nil)
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let handler = completionHandler {
                 handler(data, response, error)
             }
