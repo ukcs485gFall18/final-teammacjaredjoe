@@ -16,7 +16,7 @@ public class DayCareViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet public weak var scrollView: UIScrollView!
     
     @IBOutlet public weak var nameLabel: UILabel?
     
@@ -27,7 +27,7 @@ public class DayCareViewController: UIViewController {
         self.reloadData()
     }
     
-    @IBAction func touchTrashButton(_ sender: UIBarButtonItem) {
+    @IBAction public func touchTrashButton(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Are you sure?", message: "You can not undo this action.", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in self.destroyDayCare() }))

@@ -27,6 +27,7 @@
 		7FC01ADE21A5E2AB009D0589 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADD21A5E2AB009D0589 /* API.swift */; };
 		7FC01AE021A607D0009D0589 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADF21A607D0009D0589 /* String.swift */; };
 		7FE4E3E821A9D149006455D0 /* DayCareFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E3E621A9D149006455D0 /* DayCareFinder.xcdatamodeld */; };
+		7FE4E3EA21A9DC01006455D0 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E3E921A9DC01006455D0 /* UIApplication.swift */; };
 		7FF6C7D421A280B9009521ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6C7D321A280B9009521ED /* User.swift */; };
 		7FF6C7D621A284A0009521ED /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6C7D521A284A0009521ED /* Users.storyboard */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		7FC01ADD21A5E2AB009D0589 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7FC01ADF21A607D0009D0589 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7FE4E3E721A9D149006455D0 /* DayCareFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DayCareFinder.xcdatamodel; sourceTree = "<group>"; };
+		7FE4E3E921A9DC01006455D0 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		7FF6C7D321A280B9009521ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FF6C7D521A284A0009521ED /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Users.storyboard; path = Base.lproj/Users.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 		7F4389C621A4E07F002C430D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7FE4E3E921A9DC01006455D0 /* UIApplication.swift */,
 				7F4389C721A4E0AD002C430D /* URLRequest.swift */,
 				7FC01ADF21A607D0009D0589 /* String.swift */,
 			);
@@ -382,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE4E3EA21A9DC01006455D0 /* UIApplication.swift in Sources */,
 				7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */,
 				7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */,
 				7F38326A217958B800A551A3 /* TextField.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 public class NewDayCareViewController: UIViewController {
     
-    @IBOutlet weak var nameTextField: TextField!
+    @IBOutlet public weak var nameTextField: TextField!
     
     private func createDayCare() {
         let dayCare = DayCare()

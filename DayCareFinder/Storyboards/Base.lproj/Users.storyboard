@@ -94,7 +94,7 @@
                 <viewControllerPlaceholder storyboardName="DayCares" id="Vyd-Fp-pco" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUq-T0-zRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2534" y="-461"/>
+            <point key="canvasLocation" x="3626" y="-196"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="utJ-s9-2mU">
@@ -151,6 +151,7 @@
                         <outlet property="emailTextField" destination="Op0-1F-iiI" id="cQ6-2F-nMx"/>
                         <outlet property="passwordConfirmationTextField" destination="9Mt-9V-Dy1" id="MNA-L3-sqo"/>
                         <outlet property="passwordTextField" destination="sfu-k2-2Yl" id="uDB-Wq-CBc"/>
+                        <segue destination="Vyd-Fp-pco" kind="show" identifier="DayCares" id="fa5-eQ-VgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfr-ux-L5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,4 +159,7 @@
             <point key="canvasLocation" x="2534" y="204"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fa5-eQ-VgH"/>
+    </inferredMetricsTieBreakers>
 </document>
