@@ -6,11 +6,21 @@
 //  Copyright © 2018 Jared Payne. All rights reserved.
 //
 
-import Foundation
+import CoreData
+import UIKit
 
 public class User: APIModel {
     
-    public static var currentUser: User?
+    public static var currentUser: User? {
+        didSet {
+            guard let user = currentUser else { return }
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let context = delegate.persistentContainer.viewContext
+            let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential", into: context) as! Credential
+            credential.email = user.email
+            credential.authenticationToken = user.authenticationToken
+        }
+    }
     
     public var id: Int?
     
