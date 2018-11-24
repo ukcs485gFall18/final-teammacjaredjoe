@@ -11,7 +11,7 @@ import UIKit
 
 public class User: APIModel {
     
-    public static var currentUser: User? {
+    public private(set) static var currentUser: User? {
         didSet {
             guard let user = currentUser else { return }
             let delegate = UIApplication.shared.delegate as! AppDelegate

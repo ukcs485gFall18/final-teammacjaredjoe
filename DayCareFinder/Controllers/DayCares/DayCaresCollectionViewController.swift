@@ -14,6 +14,8 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     
     public var dayCares: [DayCare] = []
     
+    @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         super.collectionView.refreshControl = UIRefreshControl()
@@ -43,14 +45,27 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Show" {
-            let dayCareViewController = segue.destination as! DayCareViewController
-            let indexPath = super.collectionView.indexPathsForSelectedItems!.first!
-            dayCareViewController.dayCare = self.dayCares[indexPath.row]
+        switch segue.identifier {
+        case "Show": self.prepareForShow(segue: segue, sender: sender)
+        case "User": self.prepareForUser(segue: segue, sender: sender)
+        default: ()
         }
     }
     
+    private func prepareForShow(segue: UIStoryboardSegue, sender: Any?) {
+        let dayCareViewController = segue.destination as! DayCareViewController
+        let indexPath = super.collectionView.indexPathsForSelectedItems!.first!
+        dayCareViewController.dayCare = self.dayCares[indexPath.row]
+    }
+    
+    private func prepareForUser(segue: UIStoryboardSegue, sender: Any?) {
+        super.navigationController!.title = "User"
+        self.menuBarButtonItem.title = "Close"
+    }
+    
     @IBAction public func unwindToDayCaresCollectionViewController(segue: UIStoryboardSegue) {
+        super.navigationController!.title = "Day Cares"
+        self.menuBarButtonItem.title = "Menu"
         self.updateData()
     }
 }
