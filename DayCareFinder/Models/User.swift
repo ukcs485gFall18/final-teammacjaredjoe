@@ -11,7 +11,7 @@ import UIKit
 
 public class User: APIModel {
     
-    public private(set) static var currentUser: User? {
+    public static var currentUser: User? {
         didSet {
             guard let user = currentUser else { return }
             let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -36,20 +36,12 @@ public class User: APIModel {
     
     public var authenticationToken: String?
     
-    public static var sessionURL: URL {
+    public static var signInURL: URL {
         return API.urlFor(User.self).appendingPathComponent("sign_in")
     }
     
-    public func signIn(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
-        let request = URLRequest.make(kind: .post, url: User.sessionURL, body: API.encode(self))
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if (response as? HTTPURLResponse)?.statusCode == 201 {
-                User.currentUser = API.decode(User.self, from: data!)
-            }
-            if let handler = completionHandler {
-                handler(data, response, error)
-            }
-        } .resume()
+    public static var signOutURL: URL {
+        return API.urlFor(User.self).appendingPathComponent("sign_out")
     }
     
     public func signUp(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
@@ -61,5 +53,29 @@ public class User: APIModel {
                 handler(data, response, error)
             }
         }
+    }
+    
+    public func signIn(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
+        let request = URLRequest.make(kind: .post, url: User.signInURL, body: API.encode(self))
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if (response as? HTTPURLResponse)?.statusCode == 201 {
+                User.currentUser = API.decode(User.self, from: data!)
+            }
+            if let handler = completionHandler {
+                handler(data, response, error)
+            }
+        } .resume()
+    }
+    
+    public func signOut(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
+        let request = URLRequest.make(kind: .delete, url: User.signOutURL, body: nil)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if (response as? HTTPURLResponse)?.statusCode == 200 {
+                User.currentUser = nil
+            }
+            if let handler = completionHandler {
+                handler(data, response, error)
+            }
+        } .resume()
     }
 }

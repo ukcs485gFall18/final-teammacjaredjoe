@@ -11,12 +11,16 @@ import UIKit
 extension UIApplication {
     
     public func beginWaitingForNetworkResponse() {
-        self.isNetworkActivityIndicatorVisible = true
-        self.beginIgnoringInteractionEvents()
+        DispatchQueue.main.async {
+            self.isNetworkActivityIndicatorVisible = true
+            self.beginIgnoringInteractionEvents()
+        }
     }
     
     public func endWaitingForNetworkResponse() {
-        self.isNetworkActivityIndicatorVisible = false
-        self.endIgnoringInteractionEvents()
+        DispatchQueue.main.async {
+            self.isNetworkActivityIndicatorVisible = false
+            self.endIgnoringInteractionEvents()
+        }
     }
 }

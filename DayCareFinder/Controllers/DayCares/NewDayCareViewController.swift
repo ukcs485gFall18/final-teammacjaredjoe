@@ -10,15 +10,4 @@ import UIKit
 
 public class NewDayCareViewController: UIViewController {
     
-    @IBOutlet public weak var nameTextField: TextField!
-    
-    private func createDayCare() {
-        let dayCare = DayCare()
-        dayCare.name = self.nameTextField.text!
-        dayCare.post { data, response, error in
-            if error == nil {
-                self.dismiss(animated: true)
-            }
-        }
-    }
 }

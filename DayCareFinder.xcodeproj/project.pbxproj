@@ -114,6 +114,7 @@
 				7FA4B70A213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift */,
 				7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */,
 				7F3832632179403300A551A3 /* NewDayCareViewController.swift */,
+				7FE4E3EB21A9E868006455D0 /* UserMenuViewController.swift */,
 			);
 			path = DayCares;
 			sourceTree = "<group>";
@@ -123,7 +124,6 @@
 			children = (
 				7FABC73521A391A00020A4C1 /* SignInViewController.swift */,
 				7FABC73721A391C20020A4C1 /* SignUpViewController.swift */,
-				7FE4E3EB21A9E868006455D0 /* UserMenuViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
