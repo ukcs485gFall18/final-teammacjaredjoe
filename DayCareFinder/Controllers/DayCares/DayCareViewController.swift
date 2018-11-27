@@ -29,9 +29,13 @@ public class DayCareViewController: UIViewController {
     
     @IBAction public func touchTrashButton(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Are you sure?", message: "You can not undo this action.", preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in self.destroyDayCare() }))
-        self.present(alertController, animated: true)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.destroyDayCare()
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(deleteAction)
+        super.present(alertController, animated: true)
     }
     
     @objc private func updateData() {
@@ -52,7 +56,9 @@ public class DayCareViewController: UIViewController {
     private func destroyDayCare() {
         self.dayCare!.delete { data, response, error in
             guard let _ = error else {
-                self.dismiss(animated: true)
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true)
+                }
                 return
             }
         }

@@ -17,4 +17,6 @@ public class DayCare: APIModel {
     public var updatedAt: String?
     
     public var name: String?
+    
+    public var userId: Int?
 }

@@ -24,6 +24,8 @@
 		7FA4B73D213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B73C213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift */; };
 		7FABC73621A391A00020A4C1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FABC73521A391A00020A4C1 /* SignInViewController.swift */; };
 		7FABC73821A391C20020A4C1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FABC73721A391C20020A4C1 /* SignUpViewController.swift */; };
+		7FBDE4E921AB80CB00E51805 /* Kids.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDE4E721AB80CB00E51805 /* Kids.storyboard */; };
+		7FBDE4EC21AB810D00E51805 /* KidsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDE4EB21AB810D00E51805 /* KidsCollectionViewController.swift */; };
 		7FC01ADE21A5E2AB009D0589 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADD21A5E2AB009D0589 /* API.swift */; };
 		7FC01AE021A607D0009D0589 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC01ADF21A607D0009D0589 /* String.swift */; };
 		7FE4E3E821A9D149006455D0 /* DayCareFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E3E621A9D149006455D0 /* DayCareFinder.xcdatamodeld */; };
@@ -74,6 +76,8 @@
 		7FA4B73C213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaresCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FABC73521A391A00020A4C1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7FABC73721A391C20020A4C1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7FBDE4E821AB80CB00E51805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Kids.storyboard; sourceTree = "<group>"; };
+		7FBDE4EB21AB810D00E51805 /* KidsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsCollectionViewController.swift; sourceTree = "<group>"; };
 		7FC01ADD21A5E2AB009D0589 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7FC01ADF21A607D0009D0589 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7FE4E3E721A9D149006455D0 /* DayCareFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DayCareFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -114,7 +118,6 @@
 				7FA4B70A213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift */,
 				7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */,
 				7F3832632179403300A551A3 /* NewDayCareViewController.swift */,
-				7FE4E3EB21A9E868006455D0 /* UserMenuViewController.swift */,
 			);
 			path = DayCares;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			children = (
 				7FABC73521A391A00020A4C1 /* SignInViewController.swift */,
 				7FABC73721A391C20020A4C1 /* SignUpViewController.swift */,
+				7FE4E3EB21A9E868006455D0 /* UserMenuViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				7F2E9FF1217FB24700615BEF /* DayCares */,
+				7FBDE4EA21AB80F900E51805 /* Kids */,
 				7F2E9FF2217FB25E00615BEF /* Users */,
 			);
 			path = Controllers;
@@ -234,10 +239,19 @@
 			isa = PBXGroup;
 			children = (
 				7FA4B70C213CBC9F0085E5D8 /* DayCares.storyboard */,
+				7FBDE4E721AB80CB00E51805 /* Kids.storyboard */,
 				7FA4B711213CBCA00085E5D8 /* LaunchScreen.storyboard */,
 				7FF6C7D521A284A0009521ED /* Users.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7FBDE4EA21AB80F900E51805 /* Kids */ = {
+			isa = PBXGroup;
+			children = (
+				7FBDE4EB21AB810D00E51805 /* KidsCollectionViewController.swift */,
+			);
+			path = Kids;
 			sourceTree = "<group>";
 		};
 		7FC01ADC21A5E29D009D0589 /* Helpers */ = {
@@ -360,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBDE4E921AB80CB00E51805 /* Kids.storyboard in Resources */,
 				7FA4B713213CBCA00085E5D8 /* LaunchScreen.storyboard in Resources */,
 				7FF6C7D621A284A0009521ED /* Users.storyboard in Resources */,
 				7FA4B710213CBCA00085E5D8 /* Assets.xcassets in Resources */,
@@ -397,6 +412,7 @@
 				7FC01AE021A607D0009D0589 /* String.swift in Sources */,
 				7FA4B73D213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift in Sources */,
 				7FA4B739213CBD310085E5D8 /* DayCare.swift in Sources */,
+				7FBDE4EC21AB810D00E51805 /* KidsCollectionViewController.swift in Sources */,
 				7FA4B70B213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift in Sources */,
 				7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */,
 				7FE4E3E821A9D149006455D0 /* DayCareFinder.xcdatamodeld in Sources */,
@@ -455,6 +471,14 @@
 				7FA4B712213CBCA00085E5D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7FBDE4E721AB80CB00E51805 /* Kids.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FBDE4E821AB80CB00E51805 /* Base */,
+			);
+			name = Kids.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

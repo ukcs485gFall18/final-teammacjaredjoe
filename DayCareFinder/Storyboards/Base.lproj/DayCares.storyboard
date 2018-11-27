@@ -147,7 +147,15 @@
                 <viewControllerPlaceholder storyboardName="Users" id="NDF-kG-OJg" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njR-i0-XzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="659"/>
+            <point key="canvasLocation" x="547" y="658"/>
+        </scene>
+        <!--Kids-->
+        <scene sceneID="S2S-Rm-COz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Kids" id="t0x-Yl-EsH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZe-k7-TTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="658"/>
         </scene>
         <!--User Menu View Controller-->
         <scene sceneID="Blx-QK-AIn">
@@ -170,7 +178,7 @@
                                         <rect key="frame" x="20" y="61" width="53" height="30"/>
                                         <state key="normal" title="My kids"/>
                                         <connections>
-                                            <action selector="myKidsButtonTouched:" destination="qnA-E9-JW7" eventType="touchUpInside" id="E3Y-iL-2Vh"/>
+                                            <segue destination="t0x-Yl-EsH" kind="presentation" modalTransitionStyle="crossDissolve" id="9eL-7S-rcZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-Zm-Kmw">
@@ -217,9 +225,10 @@
                     </view>
                     <connections>
                         <outlet property="currentUserEmailLabel" destination="Anv-lI-blM" id="q6N-es-J9p"/>
+                        <outlet property="dayCareButton" destination="dHw-Zm-Kmw" id="jCB-KA-uyk"/>
                         <outlet property="menuView" destination="3oY-IP-02S" id="qQD-vr-y85"/>
                         <segue destination="ZKY-Cf-tUa" kind="unwind" identifier="DayCares" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="XOD-N5-6Zx"/>
-                        <segue destination="NDF-kG-OJg" kind="show" identifier="Users" id="0KJ-bw-fUJ"/>
+                        <segue destination="NDF-kG-OJg" kind="presentation" identifier="Users" modalTransitionStyle="crossDissolve" id="0KJ-bw-fUJ"/>
                         <segue destination="1C2-Eo-yeh" kind="show" identifier="New" id="4zE-P4-GGq"/>
                     </connections>
                 </viewController>
@@ -251,7 +260,21 @@
                     <view key="view" contentMode="scaleToFill" id="n7e-Aw-yqr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZG-H3-PuQ">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AZG-H3-PuQ" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="16" id="2sV-x0-UYt"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="AZG-H3-PuQ" secondAttribute="trailing" constant="16" id="8nz-Fb-6HV"/>
+                            <constraint firstItem="AZG-H3-PuQ" firstAttribute="top" secondItem="kqe-3T-4tK" secondAttribute="top" constant="254" id="X47-Xo-WH3"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="bottom" secondItem="AZG-H3-PuQ" secondAttribute="bottom" constant="319" id="XWo-R6-bGn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kqe-3T-4tK"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Day Care" id="BLQ-hS-1n6">
@@ -270,7 +293,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nc6-Wk-wHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jTP-KC-a2Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="188"/>
+            <point key="canvasLocation" x="2232.8000000000002" y="187.55622188905548"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bnc-BM-tMs">

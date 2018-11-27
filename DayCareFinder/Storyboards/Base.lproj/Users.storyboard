@@ -63,7 +63,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Swo-AA-awh" id="Z4q-bF-3HX"/>
                         <outlet property="passwordTextField" destination="IkS-OS-2nv" id="rVM-4p-5OU"/>
-                        <segue destination="Vyd-Fp-pco" kind="show" identifier="DayCares" id="GKt-ii-ddq"/>
+                        <segue destination="Vyd-Fp-pco" kind="presentation" identifier="DayCares" modalTransitionStyle="crossDissolve" id="GKt-ii-ddq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zps-wi-PEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,7 +151,7 @@
                         <outlet property="emailTextField" destination="Op0-1F-iiI" id="cQ6-2F-nMx"/>
                         <outlet property="passwordConfirmationTextField" destination="9Mt-9V-Dy1" id="MNA-L3-sqo"/>
                         <outlet property="passwordTextField" destination="sfu-k2-2Yl" id="uDB-Wq-CBc"/>
-                        <segue destination="Vyd-Fp-pco" kind="show" identifier="DayCares" id="fa5-eQ-VgH"/>
+                        <segue destination="Vyd-Fp-pco" kind="presentation" identifier="DayCares" modalTransitionStyle="crossDissolve" id="fa5-eQ-VgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfr-ux-L5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,6 +160,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fa5-eQ-VgH"/>
+        <segue reference="GKt-ii-ddq"/>
     </inferredMetricsTieBreakers>
 </document>

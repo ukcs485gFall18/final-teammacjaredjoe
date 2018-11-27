@@ -14,9 +14,17 @@ public class UserMenuViewController: UIViewController {
     
     @IBOutlet public weak var currentUserEmailLabel: UILabel!
     
+    @IBOutlet weak var dayCareButton: UIButton!
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.currentUserEmailLabel.text! = User.currentUser!.email!
+        if let _ = User.currentUser!.dayCare {
+            self.dayCareButton.titleLabel?.text = "My day care"
+        }
+        else {
+            self.dayCareButton.titleLabel!.text = "Manage a day care"
+        }
     }
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -27,15 +35,20 @@ public class UserMenuViewController: UIViewController {
     }
     
     @IBAction public func myKidsButtonTouched(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            super.performSegue(withIdentifier: "Kids", sender: nil)
+        }
     }
     
     @IBAction public func dayCareButtonTouched(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Manage a Day Care",
             message: "An account may become the manager of a single day care. Create a day care?",
             preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let submitAction = UIAlertAction(title: "Submit", style: .default) { action in
-            super.performSegue(withIdentifier: "New", sender: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let submitAction = UIAlertAction(title: "Create", style: .default) { action in
+            DispatchQueue.main.async {
+                super.performSegue(withIdentifier: "New", sender: nil)
+            }
         }
         alertController.addAction(cancelAction)
         alertController.addAction(submitAction)
@@ -43,15 +56,9 @@ public class UserMenuViewController: UIViewController {
     }
     
     @IBAction public func signOutButtonTouched(_ sender: UIButton) {
-        UIApplication.shared.beginWaitingForNetworkResponse()
-        User.currentUser!.signOut { data, response, error in
-            UIApplication.shared.endWaitingForNetworkResponse()
-            guard let response = (response as? HTTPURLResponse) else { return }
-            if response.statusCode == 200 {
-                DispatchQueue.main.async {
-                    super.performSegue(withIdentifier: "Users", sender: nil)
-                }
-            }
+        User.currentUser = nil
+        DispatchQueue.main.async {
+            super.performSegue(withIdentifier: "Users", sender: nil)
         }
     }
 }

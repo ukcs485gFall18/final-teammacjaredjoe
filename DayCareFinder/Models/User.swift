@@ -13,12 +13,20 @@ public class User: APIModel {
     
     public static var currentUser: User? {
         didSet {
-            guard let user = currentUser else { return }
-            let delegate = UIApplication.shared.delegate as! AppDelegate
-            let context = delegate.persistentContainer.viewContext
-            let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential", into: context) as! Credential
-            credential.email = user.email
-            credential.authenticationToken = user.authenticationToken
+            DispatchQueue.main.async {
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                let context = delegate.persistentContainer.viewContext
+                if let user = User.currentUser {
+                    let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential", into: context) as! Credential
+                    credential.email = user.email
+                    credential.authenticationToken = user.authenticationToken
+                }
+                else {
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Credential")
+                    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+                    try! context.execute(deleteRequest)
+                }
+            }
         }
     }
     
@@ -36,12 +44,10 @@ public class User: APIModel {
     
     public var authenticationToken: String?
     
+    public var dayCare: DayCare?
+    
     public static var signInURL: URL {
         return API.urlFor(User.self).appendingPathComponent("sign_in")
-    }
-    
-    public static var signOutURL: URL {
-        return API.urlFor(User.self).appendingPathComponent("sign_out")
     }
     
     public func signUp(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
@@ -60,18 +66,6 @@ public class User: APIModel {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 201 {
                 User.currentUser = API.decode(User.self, from: data!)
-            }
-            if let handler = completionHandler {
-                handler(data, response, error)
-            }
-        } .resume()
-    }
-    
-    public func signOut(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
-        let request = URLRequest.make(kind: .delete, url: User.signOutURL, body: nil)
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if (response as? HTTPURLResponse)?.statusCode == 200 {
-                User.currentUser = nil
             }
             if let handler = completionHandler {
                 handler(data, response, error)
