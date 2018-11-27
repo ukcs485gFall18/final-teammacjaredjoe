@@ -19,12 +19,11 @@ public protocol APIModel: Codable {
 
 extension APIModel {
     
-    public static func all(completionHandler: (([Self]?) -> ())? = nil) {
+    public static func all(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         let request = URLRequest.make(kind: .get, url: API.urlFor(self), body: nil)
         URLSession.shared.dataTask(with: request) { data, response, error in
-            let models = API.decode([Self].self, from: data!)
             if let handler = completionHandler {
-                handler(models)
+                handler(data, response, error)
             }
         } .resume()
     }

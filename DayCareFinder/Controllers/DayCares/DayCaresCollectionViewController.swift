@@ -34,12 +34,14 @@ public class DayCaresCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    @objc public func updateData() {
-        DayCare.all { dayCares in
-            self.dayCares = dayCares ?? []
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-                self.collectionView.refreshControl!.endRefreshing()
+    @objc private func updateData() {
+        DayCare.all { data, response, error in
+            if (response as? HTTPURLResponse)?.statusCode == 200 {
+                self.dayCares = API.decode([DayCare].self, from: data!)
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    self.collectionView.refreshControl!.endRefreshing()
+                }
             }
         }
     }

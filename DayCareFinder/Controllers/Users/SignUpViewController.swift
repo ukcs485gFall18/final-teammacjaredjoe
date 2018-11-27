@@ -21,11 +21,11 @@ public class SignUpViewController: UIViewController {
     }
     
     private func signUpUser() {
-        UIApplication.shared.beginWaitingForNetworkResponse()
         let user = User()
         user.email = self.emailTextField.text!
         user.password = self.passwordTextField.text!
         user.passwordConfirmation = self.passwordConfirmationTextField.text!
+        UIApplication.shared.beginWaitingForNetworkResponse()
         user.signUp { data, response, error in
             UIApplication.shared.endWaitingForNetworkResponse()
             guard let response = (response as? HTTPURLResponse) else { return }

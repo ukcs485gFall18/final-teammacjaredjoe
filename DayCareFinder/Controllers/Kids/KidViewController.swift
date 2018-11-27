@@ -1,16 +1,16 @@
 //
-//  DayCareViewController.swift
+//  KidViewController.swift
 //  DayCareFinder
 //
-//  Created by Jared Payne on 10/16/18.
+//  Created by Jared Payne on 11/26/18.
 //  Copyright © 2018 Jared Payne. All rights reserved.
 //
 
 import UIKit
 
-public class DayCareViewController: UIViewController {
+public class KidViewController: UIViewController {
     
-    public var dayCare: DayCare? {
+    public var kid: Kid? {
         didSet {
             self.reloadData()
         }
@@ -27,21 +27,19 @@ public class DayCareViewController: UIViewController {
         self.reloadData()
     }
     
-    @IBAction public func touchTrashButton(_ sender: UIBarButtonItem) {
+    @IBAction public func trashButtonWasTouched(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Are you sure?", message: "You can not undo this action.", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-            self.destroyDayCare()
+            self.destroyKid()
         }
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)
-        DispatchQueue.main.async {
-            super.present(alertController, animated: true)
-        }
+        super.present(alertController, animated: true)
     }
     
     @objc private func updateData() {
-        self.dayCare?.get { data, response, error in
+        self.kid?.get { data, response, error in
             DispatchQueue.main.async {
                 self.reloadData()
                 self.scrollView.refreshControl!.endRefreshing()
@@ -51,15 +49,16 @@ public class DayCareViewController: UIViewController {
     
     private func reloadData() {
         DispatchQueue.main.async {
-            self.nameLabel?.text = self.dayCare?.name
+            self.nameLabel?.text = self.kid?.name
         }
     }
     
-    private func destroyDayCare() {
-        self.dayCare!.delete { data, response, error in
+    private func destroyKid() {
+        self.kid!.delete { data, response, error in
             DispatchQueue.main.async {
                 super.dismiss(animated: true)
             }
         }
     }
 }
+

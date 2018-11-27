@@ -30,7 +30,9 @@ public class UserMenuViewController: UIViewController {
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard touches.count == 1, let touch = touches.first else { return }
         if !self.menuView.frame.contains(touch.location(in: super.view)) {
-            super.performSegue(withIdentifier: "DayCares", sender: nil)
+            DispatchQueue.main.async {
+                super.performSegue(withIdentifier: "DayCares", sender: nil)
+            }
         }
     }
     
@@ -42,7 +44,7 @@ public class UserMenuViewController: UIViewController {
     
     @IBAction public func dayCareButtonTouched(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Manage a Day Care",
-            message: "An account may become the manager of a single day care. Create a day care?",
+            message: "A user may become the manager of a single day care. Create a day care?",
             preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         let submitAction = UIAlertAction(title: "Create", style: .default) { action in
@@ -52,7 +54,9 @@ public class UserMenuViewController: UIViewController {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(submitAction)
-        super.present(alertController, animated: true)
+        DispatchQueue.main.async {
+            super.present(alertController, animated: true)
+        }
     }
     
     @IBAction public func signOutButtonTouched(_ sender: UIButton) {

@@ -6,8 +6,6 @@
 //  Copyright © 2018 Jared Payne. All rights reserved.
 //
 
-import Foundation
-
 public class DayCare: APIModel {
     
     public var id: Int?

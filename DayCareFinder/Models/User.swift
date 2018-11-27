@@ -17,14 +17,17 @@ public class User: APIModel {
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 let context = delegate.persistentContainer.viewContext
                 if let user = User.currentUser {
-                    let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential", into: context) as! Credential
+                    let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential",
+                        into: context) as! Credential
                     credential.email = user.email
                     credential.authenticationToken = user.authenticationToken
+                    try! context.save()
                 }
                 else {
                     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Credential")
                     let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                     try! context.execute(deleteRequest)
+                    try! context.save()
                 }
             }
         }
@@ -45,6 +48,8 @@ public class User: APIModel {
     public var authenticationToken: String?
     
     public var dayCare: DayCare?
+    
+    public var kids: [Kid]?
     
     public static var signInURL: URL {
         return API.urlFor(User.self).appendingPathComponent("sign_in")
@@ -71,5 +76,28 @@ public class User: APIModel {
                 handler(data, response, error)
             }
         } .resume()
+    }
+    
+    public func getDayCare(completionHandler: ((Data?, URLResponse?, Error?) -> ())?) {
+        DayCare.all { data, response, error in
+            if (response as? HTTPURLResponse)?.statusCode == 200 {
+                let dayCares = API.decode([DayCare].self, from: data!)
+                self.dayCare = dayCares.first { $0.userId == self.id! }
+            }
+            if let handler = completionHandler {
+                handler(data, response, error)
+            }
+        }
+    }
+    
+    public func getKids(completionHandler: ((Data?, URLResponse?, Error?) -> ())?) {
+        Kid.all { data, response, error in
+            if (response as? HTTPURLResponse)?.statusCode == 200 {
+                self.kids = API.decode([Kid].self, from: data!)
+            }
+            if let handler = completionHandler {
+                handler(data, response, error)
+            }
+        }
     }
 }
