@@ -16,5 +16,13 @@ public class DayCare: APIModel {
     
     public var name: String?
     
+    public var address: String?
+    
+    public var city: String?
+    
+    public var state: String?
+    
+    public var zipCode: String?
+    
     public var userId: Int?
 }

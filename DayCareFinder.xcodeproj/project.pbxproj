@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30FEDC218540BA00C4DA06 /* APIModel.swift */; };
 		7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3832632179403300A551A3 /* NewDayCareViewController.swift */; };
-		7F38326A217958B800A551A3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F383269217958B800A551A3 /* TextField.swift */; };
 		7F4389C521A4D9A2002C430D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4389C421A4D9A2002C430D /* UserTests.swift */; };
 		7F4389C821A4E0AD002C430D /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4389C721A4E0AD002C430D /* URLRequest.swift */; };
 		7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */; };
@@ -59,7 +58,6 @@
 /* Begin PBXFileReference section */
 		7F30FEDC218540BA00C4DA06 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		7F3832632179403300A551A3 /* NewDayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayCareViewController.swift; sourceTree = "<group>"; };
-		7F383269217958B800A551A3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		7F4389C421A4D9A2002C430D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		7F4389C721A4E0AD002C430D /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		7F7CAD2D2176BF3000085BA8 /* DayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCareViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 			children = (
 				7FA4B73C213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift */,
 				7F9D48CA21ACE5590049FDDA /* KidsCollectionViewCell.swift */,
-				7F383269217958B800A551A3 /* TextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,8 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				7FBDE4EB21AB810D00E51805 /* KidsCollectionViewController.swift */,
-				7F9F7EBC21ACD5A200893836 /* NewKidViewController.swift */,
 				7F9D48CC21ACEFE90049FDDA /* KidViewController.swift */,
+				7F9F7EBC21ACD5A200893836 /* NewKidViewController.swift */,
 			);
 			path = Kids;
 			sourceTree = "<group>";
@@ -418,7 +415,6 @@
 				7FE4E3EA21A9DC01006455D0 /* UIApplication.swift in Sources */,
 				7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */,
 				7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */,
-				7F38326A217958B800A551A3 /* TextField.swift in Sources */,
 				7FE4E3EC21A9E868006455D0 /* UserMenuViewController.swift in Sources */,
 				7F4389C821A4E0AD002C430D /* URLRequest.swift in Sources */,
 				7FC01AE021A607D0009D0589 /* String.swift in Sources */,

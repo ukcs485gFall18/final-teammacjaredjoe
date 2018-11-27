@@ -14,16 +14,18 @@ public class UserMenuViewController: UIViewController {
     
     @IBOutlet public weak var currentUserEmailLabel: UILabel!
     
-    @IBOutlet weak var dayCareButton: UIButton!
+    @IBOutlet public weak var dayCareButton: UIButton!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.currentUserEmailLabel.text! = User.currentUser!.email!
-        if let _ = User.currentUser!.dayCare {
-            self.dayCareButton.titleLabel?.text = "My day care"
-        }
-        else {
-            self.dayCareButton.titleLabel!.text = "Manage a day care"
+        DispatchQueue.main.async {
+            self.currentUserEmailLabel.text! = User.currentUser!.email!
+            if let _ = User.currentUser!.dayCare {
+                self.dayCareButton.titleLabel?.text = "My day care"
+            }
+            else {
+                self.dayCareButton.titleLabel!.text = "Manage a day care"
+            }
         }
     }
     

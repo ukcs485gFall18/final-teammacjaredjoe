@@ -261,19 +261,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZG-H3-PuQ">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyn-e4-ppY">
+                                <rect key="frame" x="16" y="80" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" textContentType="organization"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SU9-mn-HpG">
+                                <rect key="frame" x="16" y="118" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" textContentType="street-address"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAs-Y0-YJ5">
+                                <rect key="frame" x="16" y="156" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" textContentType="address-level2"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="giX-Br-hQr">
+                                <rect key="frame" x="16" y="194" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" textContentType="address-level1"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDf-Ag-Sai">
+                                <rect key="frame" x="16" y="232" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" textContentType="postal-code"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AZG-H3-PuQ" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="16" id="2sV-x0-UYt"/>
-                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="AZG-H3-PuQ" secondAttribute="trailing" constant="16" id="8nz-Fb-6HV"/>
-                            <constraint firstItem="AZG-H3-PuQ" firstAttribute="top" secondItem="kqe-3T-4tK" secondAttribute="top" constant="254" id="X47-Xo-WH3"/>
-                            <constraint firstItem="kqe-3T-4tK" firstAttribute="bottom" secondItem="AZG-H3-PuQ" secondAttribute="bottom" constant="319" id="XWo-R6-bGn"/>
+                            <constraint firstItem="NAs-Y0-YJ5" firstAttribute="top" secondItem="SU9-mn-HpG" secondAttribute="bottom" constant="8" id="1eM-C1-6Ks"/>
+                            <constraint firstItem="SU9-mn-HpG" firstAttribute="top" secondItem="oyn-e4-ppY" secondAttribute="bottom" constant="8" id="1xt-Tz-W3W"/>
+                            <constraint firstItem="giX-Br-hQr" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="16" id="3wh-Lx-W6t"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="SU9-mn-HpG" secondAttribute="trailing" constant="16" id="Eil-Jx-1rL"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="giX-Br-hQr" secondAttribute="trailing" constant="16" id="F6o-4b-dYM"/>
+                            <constraint firstItem="BDf-Ag-Sai" firstAttribute="top" secondItem="giX-Br-hQr" secondAttribute="bottom" constant="8" id="K7w-Yx-LeM"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="BDf-Ag-Sai" secondAttribute="trailing" constant="16" id="QT1-rV-wmc"/>
+                            <constraint firstItem="SU9-mn-HpG" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="16" id="X0x-aX-URj"/>
+                            <constraint firstItem="oyn-e4-ppY" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="16" id="dvT-C4-XA3"/>
+                            <constraint firstItem="giX-Br-hQr" firstAttribute="top" secondItem="NAs-Y0-YJ5" secondAttribute="bottom" constant="8" id="er1-JQ-Wj3"/>
+                            <constraint firstItem="NAs-Y0-YJ5" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="16" id="g36-5F-UGC"/>
+                            <constraint firstItem="BDf-Ag-Sai" firstAttribute="leading" secondItem="kqe-3T-4tK" secondAttribute="leading" constant="16" id="grd-9f-ubY"/>
+                            <constraint firstItem="oyn-e4-ppY" firstAttribute="top" secondItem="kqe-3T-4tK" secondAttribute="top" constant="16" id="uYo-h6-Qqf"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="NAs-Y0-YJ5" secondAttribute="trailing" constant="16" id="urs-10-cFt"/>
+                            <constraint firstItem="kqe-3T-4tK" firstAttribute="trailing" secondItem="oyn-e4-ppY" secondAttribute="trailing" constant="16" id="zUn-lY-KY4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kqe-3T-4tK"/>
                     </view>
@@ -285,10 +320,18 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="EVa-tK-73B">
                             <connections>
-                                <segue destination="jTP-KC-a2Z" kind="unwind" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="jLq-Oe-Ex7"/>
+                                <action selector="doneButtonWasTouched:" destination="EMi-W7-LKd" id="c4n-Bs-lIC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="SU9-mn-HpG" id="Zu3-dU-W2E"/>
+                        <outlet property="cityTextField" destination="NAs-Y0-YJ5" id="aAz-oi-AfD"/>
+                        <outlet property="nameTextField" destination="oyn-e4-ppY" id="7PV-CL-BQM"/>
+                        <outlet property="stateTextField" destination="giX-Br-hQr" id="bcj-FQ-45g"/>
+                        <outlet property="zipCodeTextField" destination="BDf-Ag-Sai" id="gns-Dh-zpl"/>
+                        <segue destination="jTP-KC-a2Z" kind="unwind" identifier="Index" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="79F-9T-qpt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nc6-Wk-wHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jTP-KC-a2Z" userLabel="Exit" sceneMemberID="exit"/>
