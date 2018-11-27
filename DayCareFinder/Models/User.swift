@@ -17,8 +17,7 @@ public class User: APIModel {
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 let context = delegate.persistentContainer.viewContext
                 if let user = User.currentUser {
-                    let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential",
-                        into: context) as! Credential
+                    let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential", into: context) as! Credential
                     credential.email = user.email
                     credential.authenticationToken = user.authenticationToken
                     try! context.save()
