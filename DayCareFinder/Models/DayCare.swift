@@ -24,5 +24,15 @@ public class DayCare: APIModel {
     
     public var zipCode: String?
     
+    public var phoneNumber: String?
+    
     public var userId: Int32?
+    
+    public var fullAddress: String? {
+        guard let address = self.address else { return nil }
+        guard let city = self.city else { return nil }
+        guard let state = self.state else { return nil }
+        guard let zipCode = self.zipCode else { return nil }
+        return "\(address)\n\(city), \(state) \(zipCode)"
+    }
 }
