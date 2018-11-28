@@ -73,8 +73,8 @@ public class DayCareViewController: UIViewController {
             self.nameTextView?.text = self.dayCare?.name
             if let address = self.dayCare?.fullAddress {
                 self.addressTextView?.text = address
-                if let phoneNumber = self.dayCare?.phoneNumber {
-                    self.addressTextView?.text += phoneNumber
+                if let phoneNumber = self.dayCare?.formattedPhoneNumber {
+                    self.addressTextView?.text += "\n\(phoneNumber)"
                 }
                 self.mapView?.setAddress(address)
             }

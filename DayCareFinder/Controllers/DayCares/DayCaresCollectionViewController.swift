@@ -30,7 +30,18 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellType.reuseIdentifier, for: indexPath) as! CellType
         let dayCare = self.dayCares[indexPath.row]
-        cell.nameLabel.text = dayCare.name
+        if let url = dayCare.imageUrl {
+            URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+                if (response as? HTTPURLResponse)?.statusCode == 200 {
+                    DispatchQueue.main.async {
+                        cell.imageView.image = UIImage(data: data!)!
+                    }
+                }
+            } .resume()
+        }
+        DispatchQueue.main.async {
+            cell.nameLabel.text = dayCare.name
+        }
         return cell
     }
     

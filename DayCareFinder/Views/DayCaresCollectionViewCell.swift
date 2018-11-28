@@ -12,6 +12,8 @@ public class DayCaresCollectionViewCell: UICollectionViewCell {
     
     public static let reuseIdentifier = "DayCaresCollectionViewCell"
     
+    @IBOutlet public weak var imageView: UIImageView!
+    
     @IBOutlet public weak var nameLabel: UILabel!
     
     public override func draw(_ rect: CGRect) {

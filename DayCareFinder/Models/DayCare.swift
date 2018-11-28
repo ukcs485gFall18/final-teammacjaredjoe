@@ -26,6 +26,8 @@ public class DayCare: APIModel {
     
     public var phoneNumber: String?
     
+    public var imageUrl: String?
+    
     public var userId: Int32?
     
     public var fullAddress: String? {
@@ -34,5 +36,10 @@ public class DayCare: APIModel {
         guard let state = self.state else { return nil }
         guard let zipCode = self.zipCode else { return nil }
         return "\(address)\n\(city), \(state) \(zipCode)"
+    }
+    
+    public var formattedPhoneNumber: String? {
+        guard let phoneNumber = self.phoneNumber else { return nil }
+        return phoneNumber
     }
 }
