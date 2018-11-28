@@ -35,7 +35,21 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        ["Show": self.prepareForShow, "User": self.prepareForUser][segue.identifier]?(segue, sender)
+        switch segue.identifier {
+        case "MyDayCare":
+            self.prepareForMyDayCare(segue: segue, sender: sender)
+        case "Show":
+            self.prepareForShow(segue: segue, sender: sender)
+        case "User":
+            self.prepareForUser(segue: segue, sender: sender)
+        default:
+            break
+        }
+    }
+    
+    private func prepareForMyDayCare(segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! DayCareViewController
+        viewController.dayCare = User.currentUser!.dayCare
     }
     
     private func prepareForShow(segue: UIStoryboardSegue, sender: Any?) {
@@ -57,6 +71,11 @@ public class DayCaresCollectionViewController: UICollectionViewController {
             self.menuBarButtonItem.title = "Menu"
         }
         self.updateData()
+        if segue.identifier == "MyDayCare" {
+            DispatchQueue.main.async {
+                super.performSegue(withIdentifier: "MyDayCare", sender: nil)
+            }
+        }
     }
     
     @objc private func updateData() {

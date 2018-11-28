@@ -66,6 +66,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarButtonItem" destination="IrM-Lj-Xm5" id="SuH-xE-8pa"/>
+                        <segue destination="Wzh-UP-6UV" kind="show" identifier="MyDayCare" id="0Iw-5r-yyb"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5m-Em-G6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +182,7 @@
                                             <segue destination="t0x-Yl-EsH" kind="presentation" modalTransitionStyle="crossDissolve" id="9eL-7S-rcZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-Zm-Kmw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-Zm-Kmw">
                                         <rect key="frame" x="20" y="111" width="130" height="30"/>
                                         <state key="normal" title="Manage a day care"/>
                                         <connections>
@@ -358,4 +359,7 @@
             <point key="canvasLocation" x="1278" y="188"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Iw-5r-yyb"/>
+    </inferredMetricsTieBreakers>
 </document>

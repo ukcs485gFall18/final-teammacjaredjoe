@@ -30,14 +30,18 @@ public class KidViewController: UIViewController {
     }
     
     @IBAction public func trashButtonWasTouched(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Are you sure?", message: "You can not undo this action.", preferredStyle: .actionSheet)
+        let title = "Are you sure?"
+        let message = "You cannot undo this action."
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
             self.destroyKid()
         }
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)
-        super.present(alertController, animated: true)
+        DispatchQueue.main.async {
+            super.present(alertController, animated: true)
+        }
     }
     
     @objc private func updateData() {

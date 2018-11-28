@@ -34,8 +34,10 @@ public class KidsCollectionViewController: UICollectionViewController {
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "Show": self.prepareForShow(segue: segue, sender: sender)
-        default: ()
+        case "Show":
+            self.prepareForShow(segue: segue, sender: sender)
+        default:
+            break
         }
     }
     

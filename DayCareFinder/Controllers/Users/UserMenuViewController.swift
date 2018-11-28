@@ -46,8 +46,11 @@ public class UserMenuViewController: UIViewController {
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Show" {
+        switch segue.identifier {
+        case "Show":
             self.prepareForShow(segue: segue, sender: sender)
+        default:
+            break
         }
     }
     
