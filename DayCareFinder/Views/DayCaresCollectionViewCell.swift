@@ -18,7 +18,11 @@ public class DayCaresCollectionViewCell: UICollectionViewCell {
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
+        super.contentView.backgroundColor = UIColor.white
         super.contentView.layer.borderColor = UIColor.lightGray.cgColor
         super.contentView.layer.borderWidth = 1.0
+        super.contentView.layer.cornerRadius = 10.0
+        self.imageView.layer.cornerRadius = 10.0
+        self.imageView.layer.masksToBounds = true
     }
 }

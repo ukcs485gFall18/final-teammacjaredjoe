@@ -31,28 +31,32 @@
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="sA7-ny-ITa">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="sA7-ny-ITa">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="201"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="201" id="3go-Bj-Fb0"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-lA-ATc">
-                                            <rect key="frame" x="20" y="209" width="295" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-lA-ATc">
+                                            <rect key="frame" x="20" y="213" width="295" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="MA9-lA-ATc" firstAttribute="top" secondItem="sA7-ny-ITa" secondAttribute="bottom" constant="8" id="4HK-IP-7Te"/>
                                     <constraint firstItem="sA7-ny-ITa" firstAttribute="top" secondItem="2fb-jn-38N" secondAttribute="top" id="4tC-su-Yzk"/>
+                                    <constraint firstItem="sA7-ny-ITa" firstAttribute="leading" secondItem="2fb-jn-38N" secondAttribute="leading" id="8Ko-id-CvO"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="MA9-lA-ATc" secondAttribute="trailing" constant="12" id="92l-g9-aQf"/>
                                     <constraint firstAttribute="trailing" secondItem="sA7-ny-ITa" secondAttribute="trailing" id="A8N-b9-5P8"/>
-                                    <constraint firstItem="MA9-lA-ATc" firstAttribute="leading" secondItem="2fb-jn-38N" secondAttribute="leadingMargin" constant="12" id="Ygc-TX-aAC"/>
+                                    <constraint firstItem="MA9-lA-ATc" firstAttribute="top" secondItem="sA7-ny-ITa" secondAttribute="bottom" constant="12" id="K3Y-Tc-U0u"/>
+                                    <constraint firstAttribute="trailing" secondItem="sA7-ny-ITa" secondAttribute="trailing" id="LVt-ev-CQW"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="MA9-lA-ATc" secondAttribute="bottom" constant="12" id="MMH-Rf-xnc"/>
+                                    <constraint firstItem="MA9-lA-ATc" firstAttribute="leading" secondItem="2fb-jn-38N" secondAttribute="leadingMargin" constant="12" id="MTf-ZK-Rs8"/>
+                                    <constraint firstItem="MA9-lA-ATc" firstAttribute="top" secondItem="sA7-ny-ITa" secondAttribute="bottom" constant="12" id="e8Z-sj-VQP"/>
+                                    <constraint firstItem="sA7-ny-ITa" firstAttribute="top" secondItem="2fb-jn-38N" secondAttribute="top" id="fkI-sT-BCK"/>
                                     <constraint firstItem="sA7-ny-ITa" firstAttribute="leading" secondItem="2fb-jn-38N" secondAttribute="leading" id="p6b-QH-Vv1"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="MA9-lA-ATc" secondAttribute="bottom" constant="12" id="sEh-xi-dYZ"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="MA9-lA-ATc" secondAttribute="trailing" constant="12" id="xag-GC-8Qg"/>
                                 </constraints>
                                 <size key="customSize" width="335" height="250"/>
                                 <connections>
