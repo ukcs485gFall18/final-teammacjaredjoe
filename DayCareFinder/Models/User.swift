@@ -18,6 +18,7 @@ public class User: APIModel {
                 let context = delegate.persistentContainer.viewContext
                 if let user = User.currentUser {
                     let credential = NSEntityDescription.insertNewObject(forEntityName: "Credential", into: context) as! Credential
+                    credential.id = user.id!
                     credential.email = user.email
                     credential.authenticationToken = user.authenticationToken
                     try! context.save()
@@ -32,7 +33,7 @@ public class User: APIModel {
         }
     }
     
-    public var id: Int?
+    public var id: Int32?
     
     public var createdAt: String?
     

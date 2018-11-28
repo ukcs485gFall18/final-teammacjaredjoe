@@ -8,7 +8,7 @@
 
 public class DayCare: APIModel {
     
-    public var id: Int?
+    public var id: Int32?
     
     public var createdAt: String?
     
@@ -24,5 +24,5 @@ public class DayCare: APIModel {
     
     public var zipCode: String?
     
-    public var userId: Int?
+    public var userId: Int32?
 }

@@ -38,9 +38,11 @@ import UIKit
     
     private func setCurrentUser(with credential: Credential) {
         let user = User()
+        user.id = credential.id
         user.email = credential.email
         user.authenticationToken = credential.authenticationToken
         User.currentUser = user
+        User.currentUser!.get()
     }
     
     private func setInitialStoryboard(as storyboard: UIStoryboard) {

@@ -10,7 +10,7 @@ import Foundation
 
 public protocol APIModel: Codable {
     
-    var id: Int? { get set }
+    var id: Int32? { get set }
     
     var createdAt: String? { get set }
     

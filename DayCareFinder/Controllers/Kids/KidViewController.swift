@@ -18,7 +18,9 @@ public class KidViewController: UIViewController {
     
     @IBOutlet public weak var scrollView: UIScrollView!
     
-    @IBOutlet public weak var nameLabel: UILabel?
+    @IBOutlet weak var nameAndAgeTextView: UITextView!
+    
+    @IBOutlet weak var detailsTextView: UITextView!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +51,14 @@ public class KidViewController: UIViewController {
     
     private func reloadData() {
         DispatchQueue.main.async {
-            self.nameLabel?.text = self.kid?.name
+            guard let kid = self.kid else { return }
+            self.nameAndAgeTextView.text = kid.name! + ", " + String(kid.age!)
+            if let details = kid.details {
+                self.detailsTextView.text = details
+            }
+            else {
+                self.detailsTextView.text = "No details provided."
+            }
         }
     }
     

@@ -10,6 +10,8 @@ import UIKit
 
 public class UserMenuViewController: UIViewController {
     
+    public var dayCare: DayCare?
+    
     @IBOutlet public weak var menuView: UIView!
     
     @IBOutlet public weak var currentUserEmailLabel: UILabel!
@@ -20,11 +22,16 @@ public class UserMenuViewController: UIViewController {
         super.viewDidLoad()
         DispatchQueue.main.async {
             self.currentUserEmailLabel.text! = User.currentUser!.email!
-            if let _ = User.currentUser!.dayCare {
-                self.dayCareButton.titleLabel?.text = "My day care"
-            }
-            else {
-                self.dayCareButton.titleLabel!.text = "Manage a day care"
+        }
+        User.currentUser!.getDayCare { data, response, error in
+            DispatchQueue.main.async {
+                if let dayCare = User.currentUser!.dayCare {
+                    self.dayCare = dayCare
+                    self.dayCareButton.titleLabel?.text = "My day care"
+                }
+                else {
+                    self.dayCareButton.titleLabel!.text = "Manage a day care"
+                }
             }
         }
     }
@@ -38,6 +45,17 @@ public class UserMenuViewController: UIViewController {
         }
     }
     
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Show" {
+            self.prepareForShow(segue: segue, sender: sender)
+        }
+    }
+    
+    private func prepareForShow(segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! DayCareViewController
+        viewController.dayCare = self.dayCare
+    }
+    
     @IBAction public func myKidsButtonTouched(_ sender: UIButton) {
         DispatchQueue.main.async {
             super.performSegue(withIdentifier: "Kids", sender: nil)
@@ -45,17 +63,28 @@ public class UserMenuViewController: UIViewController {
     }
     
     @IBAction public func dayCareButtonTouched(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Manage a Day Care",
-            message: "A user may become the manager of a single day care. Create a day care?",
-            preferredStyle: .alert)
+        if let _ = self.dayCare {
+            DispatchQueue.main.async {
+                super.performSegue(withIdentifier: "MyDayCare", sender: nil)
+            }
+        }
+        else {
+            self.presentCreateDayCarePrompt()
+        }
+    }
+    
+    private func presentCreateDayCarePrompt() {
+        let title = "Manage a Day Care"
+        let message = "A user may become the manager of a single day care. Create a day care?"
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let submitAction = UIAlertAction(title: "Create", style: .default) { action in
+        let createAction = UIAlertAction(title: "Create", style: .default) { action in
             DispatchQueue.main.async {
                 super.performSegue(withIdentifier: "New", sender: nil)
             }
         }
         alertController.addAction(cancelAction)
-        alertController.addAction(submitAction)
+        alertController.addAction(createAction)
         DispatchQueue.main.async {
             super.present(alertController, animated: true)
         }

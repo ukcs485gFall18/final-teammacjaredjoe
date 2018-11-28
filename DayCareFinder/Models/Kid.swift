@@ -8,7 +8,7 @@
 
 public class Kid: APIModel {
     
-    public var id: Int?
+    public var id: Int32?
     
     public var createdAt: String?
     
