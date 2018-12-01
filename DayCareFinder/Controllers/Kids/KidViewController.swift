@@ -56,12 +56,12 @@ public class KidViewController: UIViewController {
     private func reloadData() {
         DispatchQueue.main.async {
             guard let kid = self.kid else { return }
-            self.nameAndAgeTextView.text = kid.name! + ", " + String(kid.age!)
-            if let details = kid.details {
-                self.detailsTextView.text = details
+            self.nameAndAgeTextView?.text = kid.name! + ", " + String(kid.age!)
+            if let details = kid.details, !details.isEmpty {
+                self.detailsTextView?.text = details
             }
             else {
-                self.detailsTextView.text = "No details provided."
+                self.detailsTextView?.text = "No details provided."
             }
         }
     }

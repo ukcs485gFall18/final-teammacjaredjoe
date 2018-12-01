@@ -20,6 +20,8 @@ public class NewDayCareViewController: UIViewController {
     
     @IBOutlet public weak var zipCodeTextField: UITextField!
     
+    @IBOutlet public weak var phoneNumberTextField: UITextField!
+    
     @IBAction public func doneButtonWasTouched(_ sender: UIBarButtonItem) {
         self.createDayCare()
     }
@@ -31,6 +33,7 @@ public class NewDayCareViewController: UIViewController {
         dayCare.city = self.cityTextField.text!
         dayCare.state = self.stateTextField.text!
         dayCare.zipCode = self.zipCodeTextField.text!
+        dayCare.phoneNumber = self.phoneNumberTextField.text!
         UIApplication.shared.beginWaitingForNetworkResponse()
         dayCare.post { data, response, error in
             UIApplication.shared.endWaitingForNetworkResponse()
@@ -46,7 +49,7 @@ public class NewDayCareViewController: UIViewController {
 extension NewDayCareViewController: UITextFieldDelegate {
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard textField == self.zipCodeTextField else { return false }
+        guard textField == self.phoneNumberTextField else { return false }
         self.createDayCare()
         return false
     }

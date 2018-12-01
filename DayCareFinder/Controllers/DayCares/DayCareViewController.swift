@@ -31,11 +31,15 @@ public class DayCareViewController: UIViewController {
         super.viewDidLoad()
         self.scrollView.refreshControl = UIRefreshControl()
         self.scrollView.refreshControl!.addTarget(self, action: #selector(self.updateData), for: .valueChanged)
-        if let dayCare = self.dayCare, dayCare === User.currentUser!.dayCare {
-            self.navigationItem.rightBarButtonItem = self.trashBarButtonItem
-        }
-        else {
-            self.navigationItem.rightBarButtonItem = nil
+        User.currentUser!.getDayCare { data, response, error in
+            DispatchQueue.main.async {
+                if let dayCare = self.dayCare, dayCare === User.currentUser!.dayCare {
+                    self.navigationItem.rightBarButtonItem = self.trashBarButtonItem
+                }
+                else {
+                    self.navigationItem.rightBarButtonItem = nil
+                }
+            }
         }
         self.reloadData()
     }
