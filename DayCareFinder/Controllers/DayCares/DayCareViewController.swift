@@ -71,11 +71,10 @@ public class DayCareViewController: UIViewController {
     }
     
     @IBAction public func callButtonWasTouched(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: self.dayCare!.phoneNumber!)!)
+        UIApplication.shared.open(self.dayCare!.phoneNumberURL!)
     }
     
     @IBAction public func unwindToDayCareViewController(segue: UIStoryboardSegue) {
-        
     }
     
     @objc private func updateData() {

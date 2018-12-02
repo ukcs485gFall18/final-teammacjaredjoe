@@ -6,6 +6,8 @@
 //  Copyright © 2018 Jared Payne. All rights reserved.
 //
 
+import Foundation
+
 public class DayCare: APIModel {
     
     public var id: Int32?
@@ -45,5 +47,11 @@ public class DayCare: APIModel {
     public var formattedPhoneNumber: String? {
         guard let phoneNumber = self.phoneNumber else { return nil }
         return phoneNumber
+    }
+    
+    public var phoneNumberURL: URL? {
+        guard let phoneNumber = self.phoneNumber else { return nil }
+        let digits = String(phoneNumber.unicodeScalars.filter { CharacterSet.decimalDigits.contains($0) } )
+        return URL(string: "tel://\(digits)")!
     }
 }
