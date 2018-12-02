@@ -28,12 +28,16 @@ public class Kid: APIModel {
     
     public var enrollment: Enrollment?
     
+    /// Returns the first and last name as a single `String`.
     public var name: String? {
         guard let firstName = self.firstName else { return nil }
         guard let lastName = self.lastName else { return nil }
         return firstName + " " + lastName
     }
     
+    /// Populates the `enrollments` property.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func getEnrollment(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         Enrollment.all {data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 200 {

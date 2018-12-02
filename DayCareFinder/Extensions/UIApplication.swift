@@ -10,6 +10,7 @@ import UIKit
 
 extension UIApplication {
     
+    /// Disables user interaction for the application and shows the network activity indicator.
     public func beginWaitingForNetworkResponse() {
         DispatchQueue.main.async {
             self.isNetworkActivityIndicatorVisible = true
@@ -17,6 +18,7 @@ extension UIApplication {
         }
     }
     
+    /// Enables user interaction for the application and hides the network activity indicator.
     public func endWaitingForNetworkResponse() {
         DispatchQueue.main.async {
             self.isNetworkActivityIndicatorVisible = false

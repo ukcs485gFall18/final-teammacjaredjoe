@@ -19,6 +19,9 @@ public protocol APIModel: Codable {
 
 extension APIModel {
     
+    /// Fetches all of the entries of a model class from the database.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public static func all(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         let request = URLRequest.make(kind: .get, url: API.urlFor(self), body: nil)
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -28,6 +31,9 @@ extension APIModel {
         } .resume()
     }
     
+    /// Fetches the properties of a model entry given its set ID.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func get(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         let request = URLRequest.make(kind: .get, url: API.urlFor(self), body: nil)
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -37,6 +43,9 @@ extension APIModel {
         } .resume()
     }
     
+    /// Posts a model entry to the database.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func post(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         let request = URLRequest.make(kind: .post, url: API.urlFor(type(of: self)), body: API.encode(self))
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -46,6 +55,9 @@ extension APIModel {
         } .resume()
     }
     
+    /// Updates a model entry already in the database.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func patch(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         let request = URLRequest.make(kind: .patch, url: API.urlFor(self), body: API.encode(self))
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -55,6 +67,9 @@ extension APIModel {
         } .resume()
     }
     
+    /// Deletes a model entry from the database.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func delete(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         let request = URLRequest.make(kind: .delete, url: API.urlFor(self), body: nil)
         URLSession.shared.dataTask(with: request) { data, response, error in

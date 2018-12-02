@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     
+    /// Pluralizes a `String` containing a noun.
     public var pluralized: String {
         // Not a great method, but it works for our purposes.
         return self + "s"

@@ -30,6 +30,7 @@ public class DayCare: APIModel {
     
     public var userId: Int32?
     
+    /// The full, formatted address of the `DayCare`.
     public var fullAddress: String? {
         guard let address = self.address else { return nil }
         guard let city = self.city else { return nil }
@@ -38,6 +39,9 @@ public class DayCare: APIModel {
         return "\(address)\n\(city), \(state) \(zipCode)"
     }
     
+    /// The formatted phone number of the `DayCare`.
+    ///
+    /// TODO: This currently just returns the phone number as-is.
     public var formattedPhoneNumber: String? {
         guard let phoneNumber = self.phoneNumber else { return nil }
         return phoneNumber

@@ -10,6 +10,7 @@ import MapKit
 
 extension MKMapView {
     
+    /// Sets the focus of the `MKMapView` using a US address.
     public func setAddress(_ fullAddress: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(fullAddress) { placemarks, error in

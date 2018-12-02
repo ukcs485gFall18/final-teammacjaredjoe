@@ -22,6 +22,9 @@ public class Enrollment: APIModel {
     
     public var dayCare: DayCare?
     
+    /// Populates the `dayCare` property.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func getDayCare(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         DayCare.all {data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 200 {

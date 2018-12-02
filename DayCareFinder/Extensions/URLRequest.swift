@@ -10,6 +10,7 @@ import Foundation
 
 extension URLRequest {
     
+    /// Represents a type of `URLRequest` method.
     public enum Kind: String {
         case get = "GET"
         case post = "POST"
@@ -17,6 +18,11 @@ extension URLRequest {
         case delete = "DELETE"
     }
     
+    /// Conveniently generates a JSON `URLRequest` for the application API.
+    ///
+    /// - parameter kind: The HTTP method type.
+    /// - parameter url: The URL at which to direct the request.
+    /// - parameter body: The request body data.
     public static func make(kind: Kind, url: URL, body: Data?) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = kind.rawValue

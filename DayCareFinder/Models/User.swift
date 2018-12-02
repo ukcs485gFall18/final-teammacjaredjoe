@@ -11,6 +11,7 @@ import UIKit
 
 public class User: APIModel {
     
+    /// The `User` currently signed in.
     public static var currentUser: User? {
         didSet {
             DispatchQueue.main.async {
@@ -55,6 +56,9 @@ public class User: APIModel {
         return API.urlFor(User.self).appendingPathComponent("sign_in")
     }
     
+    /// Creates and signs in a new `User`.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func signUp(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         self.post { data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 201 {
@@ -66,6 +70,9 @@ public class User: APIModel {
         }
     }
     
+    /// Signs in an existing `User`.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func signIn(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         let request = URLRequest.make(kind: .post, url: User.signInURL, body: API.encode(self))
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -78,6 +85,9 @@ public class User: APIModel {
         } .resume()
     }
     
+    /// Populates the `dayCare` property.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func getDayCare(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         DayCare.all { data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 200 {
@@ -90,6 +100,9 @@ public class User: APIModel {
         }
     }
     
+    /// Populates the `kids` property.
+    ///
+    /// - parameter completionHandler: A function to execute when the task is complete.
     public func getKids(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         Kid.all { data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 200 {
