@@ -12,6 +12,7 @@ public class KidsCollectionViewCell: UICollectionViewCell {
     
     public static let reuseIdentifier = "KidsCollectionViewCell"
     
+    //attached to Name button in Enroll Kid controller
     @IBOutlet public weak var nameLabel: UILabel!
     
     public override func draw(_ rect: CGRect) {

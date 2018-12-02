@@ -141,16 +141,25 @@ Cupertino, CA 95014
                                                     <action selector="callButtonWasTouched:" destination="Wzh-UP-6UV" eventType="touchUpInside" id="vlK-HI-WOp"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4I-pi-XtB">
+                                                <rect key="frame" x="142.5" y="364" width="90" height="30"/>
+                                                <state key="normal" title="Enroll My Kid"/>
+                                                <connections>
+                                                    <segue destination="bKI-Li-yUu" kind="show" identifier="NewEnrollment" id="tfD-rg-Rie"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ewN-17-VeO" firstAttribute="top" secondItem="4CK-8P-R2I" secondAttribute="bottom" constant="8" id="1jJ-Ec-eWH"/>
                                             <constraint firstItem="4CK-8P-R2I" firstAttribute="top" secondItem="iQ9-zn-ZMe" secondAttribute="top" id="53w-Wg-pe2"/>
                                             <constraint firstAttribute="trailing" secondItem="4CK-8P-R2I" secondAttribute="trailing" id="5gR-kM-TDl"/>
+                                            <constraint firstItem="c4I-pi-XtB" firstAttribute="centerX" secondItem="iQ9-zn-ZMe" secondAttribute="centerX" id="Cn8-4B-nWy"/>
                                             <constraint firstItem="i6d-hf-G2A" firstAttribute="leading" secondItem="iQ9-zn-ZMe" secondAttribute="leading" constant="8" id="DxG-Nb-OYN"/>
                                             <constraint firstItem="i6d-hf-G2A" firstAttribute="top" secondItem="ewN-17-VeO" secondAttribute="bottom" constant="8" id="L9d-pA-9jL"/>
                                             <constraint firstItem="1xG-XG-nMn" firstAttribute="leading" secondItem="i6d-hf-G2A" secondAttribute="trailing" constant="8" id="YiL-aw-YEl"/>
                                             <constraint firstAttribute="trailing" secondItem="ewN-17-VeO" secondAttribute="trailing" constant="8" id="Yso-4M-Pac"/>
+                                            <constraint firstItem="c4I-pi-XtB" firstAttribute="top" secondItem="i6d-hf-G2A" secondAttribute="bottom" constant="8" id="fXG-dY-Pw0"/>
                                             <constraint firstItem="1xG-XG-nMn" firstAttribute="top" secondItem="ewN-17-VeO" secondAttribute="bottom" constant="23" id="och-Ub-a18"/>
                                             <constraint firstItem="ewN-17-VeO" firstAttribute="leading" secondItem="iQ9-zn-ZMe" secondAttribute="leading" constant="8" id="pFP-Yy-0Xc"/>
                                             <constraint firstAttribute="trailing" secondItem="1xG-XG-nMn" secondAttribute="trailing" constant="8" id="sOW-Oh-quk"/>
@@ -186,7 +195,7 @@ Cupertino, CA 95014
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="kVD-ex-biW">
                             <connections>
                                 <action selector="touchTrashButton:" destination="Wzh-UP-6UV" id="jbo-f0-rnj"/>
-                                <segue destination="K68-AG-75M" kind="unwind" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="JR0-4Y-hKA"/>
+                                <segue destination="K68-AG-75M" kind="unwind" identifier="" unwindAction="unwindToDayCaresCollectionViewControllerWithSegue:" id="JR0-4Y-hKA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -428,6 +437,61 @@ Cupertino, CA 95014
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caq-PR-x1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1278" y="188"/>
+        </scene>
+        <!--Enroll Kid-->
+        <scene sceneID="aUO-kC-fWX">
+            <objects>
+                <collectionViewController id="bKI-Li-yUu" customClass="EnrollmentsCollectionViewController" customModule="DayCareFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="l7q-BF-ygN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lwd-w1-9iS">
+                            <size key="itemSize" width="335" height="45"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KidsCollectionViewCell" id="7nG-RJ-fyz" customClass="KidsCollectionViewCell" customModule="DayCareFinder" customModuleProvider="target">
+                                <rect key="frame" x="20" y="10" width="335" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pY-Dk-YNr">
+                                            <rect key="frame" x="145" y="12" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="3pY-Dk-YNr" firstAttribute="centerX" secondItem="7nG-RJ-fyz" secondAttribute="centerX" id="Ng1-Lf-IvG"/>
+                                    <constraint firstItem="3pY-Dk-YNr" firstAttribute="centerY" secondItem="7nG-RJ-fyz" secondAttribute="centerY" id="bOI-9F-KMD"/>
+                                </constraints>
+                                <size key="customSize" width="335" height="45"/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="3pY-Dk-YNr" id="bcx-i2-p8p"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="bKI-Li-yUu" id="mYy-Rx-YXS"/>
+                            <outlet property="delegate" destination="bKI-Li-yUu" id="L73-Al-7uh"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Enroll Kid" id="MTh-ck-auI"/>
+                    <connections>
+                        <segue destination="unK-sJ-qks" kind="unwind" identifier="Show" unwindAction="unwindToDayCareViewControllerWithSegue:" id="YeS-FD-Got"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yp-l6-0cK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="unK-sJ-qks" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2252" y="-559"/>
         </scene>
     </scenes>
     <resources>

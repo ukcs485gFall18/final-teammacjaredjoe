@@ -20,13 +20,15 @@ public class KidViewController: UIViewController {
     
     @IBOutlet weak var nameAndAgeTextView: UITextView!
     
+    @IBOutlet weak var dayCareNameLabel: UILabel!
+    
     @IBOutlet weak var detailsTextView: UITextView!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.refreshControl = UIRefreshControl()
         self.scrollView.refreshControl!.addTarget(self, action: #selector(self.updateData), for: .valueChanged)
-        self.reloadData()
+        self.updateData()
     }
     
     @IBAction public func trashButtonWasTouched(_ sender: UIBarButtonItem) {
@@ -46,9 +48,13 @@ public class KidViewController: UIViewController {
     
     @objc private func updateData() {
         self.kid?.get { data, response, error in
-            DispatchQueue.main.async {
-                self.reloadData()
-                self.scrollView.refreshControl!.endRefreshing()
+            self.kid!.getEnrollment() {data, response, error in
+                self.kid!.enrollment!.getDayCare() {data, response, error in
+                    DispatchQueue.main.async {
+                        self.reloadData()
+                        self.scrollView.refreshControl!.endRefreshing()
+                    }
+                }
             }
         }
     }
@@ -56,6 +62,12 @@ public class KidViewController: UIViewController {
     private func reloadData() {
         DispatchQueue.main.async {
             guard let kid = self.kid else { return }
+            if let dayCare = kid.enrollment?.dayCare {
+                self.dayCareNameLabel?.text = dayCare.name
+            }
+            else {
+                self.dayCareNameLabel?.text = "Not currently enrolled."
+            }
             self.nameAndAgeTextView?.text = kid.name! + ", " + String(kid.age!)
             if let details = kid.details, !details.isEmpty {
                 self.detailsTextView?.text = details

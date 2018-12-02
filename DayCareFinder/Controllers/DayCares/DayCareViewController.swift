@@ -44,6 +44,17 @@ public class DayCareViewController: UIViewController {
         self.reloadData()
     }
     
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "NewEnrollment":
+            //as! to cast because we know it wont fail
+            let viewController = segue.destination as! EnrollmentsCollectionViewController
+            viewController.dayCare = self.dayCare
+        default:
+            break
+        }
+    }
+    
     @IBAction public func touchTrashButton(_ sender: UIBarButtonItem) {
         let title = "Are you sure?"
         let message = "You cannot undo this action."
@@ -59,8 +70,12 @@ public class DayCareViewController: UIViewController {
         }
     }
     
-    @IBAction func callButtonWasTouched(_ sender: UIButton) {
+    @IBAction public func callButtonWasTouched(_ sender: UIButton) {
         UIApplication.shared.open(URL(string: self.dayCare!.phoneNumber!)!)
+    }
+    
+    @IBAction public func unwindToDayCareViewController(segue: UIStoryboardSegue) {
+        
     }
     
     @objc private func updateData() {

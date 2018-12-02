@@ -213,20 +213,32 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Alexander Johnson, 12" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBq-t6-a0s">
                                                 <rect key="frame" x="8" y="8" width="359" height="52"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="52" id="I2E-6m-rPr"/>
+                                                    <constraint firstAttribute="height" constant="52" id="ut7-VI-44n"/>
                                                 </constraints>
                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Details go here." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsr-Xp-22E">
-                                                <rect key="frame" x="8" y="112" width="359" height="483"/>
+                                                <rect key="frame" x="8" y="185" width="359" height="410"/>
                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phT-2x-ca6">
-                                                <rect key="frame" x="147.5" y="68" width="80" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enrolled In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsM-S2-eGH">
+                                                <rect key="frame" x="126" y="68" width="123" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day Care Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUu-mN-eDi">
+                                                <rect key="frame" x="128.5" y="112" width="118" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phT-2x-ca6">
+                                                <rect key="frame" x="147.5" y="141" width="80" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -234,38 +246,38 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="sBq-t6-a0s" firstAttribute="top" secondItem="pkJ-tx-jhA" secondAttribute="top" constant="8" id="9oc-Za-dmS"/>
-                                            <constraint firstItem="dsr-Xp-22E" firstAttribute="leading" secondItem="pkJ-tx-jhA" secondAttribute="leading" constant="8" id="L5V-KB-JW4"/>
-                                            <constraint firstItem="phT-2x-ca6" firstAttribute="top" secondItem="sBq-t6-a0s" secondAttribute="bottom" constant="8" id="S3D-8g-LfY"/>
-                                            <constraint firstItem="phT-2x-ca6" firstAttribute="centerX" secondItem="pkJ-tx-jhA" secondAttribute="centerX" id="Yj8-N8-HD9"/>
-                                            <constraint firstItem="dsr-Xp-22E" firstAttribute="top" secondItem="phT-2x-ca6" secondAttribute="bottom" constant="8" id="bb0-N9-KCp"/>
-                                            <constraint firstItem="sBq-t6-a0s" firstAttribute="leading" secondItem="pkJ-tx-jhA" secondAttribute="leading" constant="8" id="eYc-4P-dkw"/>
-                                            <constraint firstAttribute="bottom" secondItem="dsr-Xp-22E" secondAttribute="bottom" constant="8" id="rYH-zQ-Fqc"/>
-                                            <constraint firstAttribute="trailing" secondItem="sBq-t6-a0s" secondAttribute="trailing" constant="8" id="xe2-Gm-Vfl"/>
-                                            <constraint firstAttribute="trailing" secondItem="dsr-Xp-22E" secondAttribute="trailing" constant="8" id="zxa-ZI-xJw"/>
+                                            <constraint firstItem="sBq-t6-a0s" firstAttribute="top" secondItem="pkJ-tx-jhA" secondAttribute="top" constant="8" id="4Rv-sg-rt7"/>
+                                            <constraint firstItem="lUu-mN-eDi" firstAttribute="centerX" secondItem="pkJ-tx-jhA" secondAttribute="centerX" id="Ayk-3k-k8A"/>
+                                            <constraint firstAttribute="bottom" secondItem="dsr-Xp-22E" secondAttribute="bottom" constant="8" id="BQ7-cP-P5o"/>
+                                            <constraint firstItem="sBq-t6-a0s" firstAttribute="leading" secondItem="pkJ-tx-jhA" secondAttribute="leading" constant="8" id="F3E-bE-esG"/>
+                                            <constraint firstItem="phT-2x-ca6" firstAttribute="centerX" secondItem="pkJ-tx-jhA" secondAttribute="centerX" id="FVe-EJ-IMX"/>
+                                            <constraint firstItem="dsr-Xp-22E" firstAttribute="leading" secondItem="pkJ-tx-jhA" secondAttribute="leading" constant="8" id="HCq-vn-7mh"/>
+                                            <constraint firstItem="lUu-mN-eDi" firstAttribute="top" secondItem="hsM-S2-eGH" secondAttribute="bottom" constant="8" id="Hsb-tB-VRV"/>
+                                            <constraint firstAttribute="trailing" secondItem="dsr-Xp-22E" secondAttribute="trailing" constant="8" id="RV0-qc-Pm3"/>
+                                            <constraint firstItem="hsM-S2-eGH" firstAttribute="centerX" secondItem="pkJ-tx-jhA" secondAttribute="centerX" id="Sim-1h-QCd"/>
+                                            <constraint firstAttribute="trailing" secondItem="sBq-t6-a0s" secondAttribute="trailing" constant="8" id="hmE-CZ-k9c"/>
+                                            <constraint firstItem="dsr-Xp-22E" firstAttribute="top" secondItem="phT-2x-ca6" secondAttribute="bottom" constant="8" id="kO1-Tc-8wz"/>
+                                            <constraint firstItem="hsM-S2-eGH" firstAttribute="top" secondItem="sBq-t6-a0s" secondAttribute="bottom" constant="8" id="yKA-FU-Vaz"/>
+                                            <constraint firstItem="phT-2x-ca6" firstAttribute="top" secondItem="lUu-mN-eDi" secondAttribute="bottom" constant="8" id="z0j-JC-pay"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="pkJ-tx-jhA" secondAttribute="bottom" id="KpG-Om-bCp"/>
-                                    <constraint firstAttribute="trailing" secondItem="pkJ-tx-jhA" secondAttribute="trailing" id="P2Z-Kz-jVA"/>
-                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="top" secondItem="T6N-Vm-RGp" secondAttribute="top" id="SAO-Rt-owk"/>
-                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="centerY" secondItem="T6N-Vm-RGp" secondAttribute="centerY" id="YzV-7F-bAf"/>
-                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="centerX" secondItem="T6N-Vm-RGp" secondAttribute="centerX" id="sIw-bX-aqn"/>
-                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="leading" secondItem="T6N-Vm-RGp" secondAttribute="leading" id="yn2-6q-Jip"/>
+                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="top" secondItem="T6N-Vm-RGp" secondAttribute="top" id="1ab-IW-tJ3"/>
+                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="leading" secondItem="T6N-Vm-RGp" secondAttribute="leading" id="Bxp-4s-kux"/>
+                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="centerY" secondItem="T6N-Vm-RGp" secondAttribute="centerY" id="Nxg-Ni-4Q3"/>
+                                    <constraint firstAttribute="trailing" secondItem="pkJ-tx-jhA" secondAttribute="trailing" id="bWQ-gv-mdi"/>
+                                    <constraint firstItem="pkJ-tx-jhA" firstAttribute="centerX" secondItem="T6N-Vm-RGp" secondAttribute="centerX" id="hDG-r7-xrV"/>
+                                    <constraint firstAttribute="bottom" secondItem="pkJ-tx-jhA" secondAttribute="bottom" id="qS0-fh-yp3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="leading" secondItem="9Sr-mB-xQ7" secondAttribute="leading" id="4Fq-jK-5fZ"/>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="top" secondItem="9Sr-mB-xQ7" secondAttribute="top" id="MZm-88-AA2"/>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="bottom" secondItem="9Sr-mB-xQ7" secondAttribute="bottom" id="RZT-Fe-UqB"/>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="trailing" secondItem="9Sr-mB-xQ7" secondAttribute="trailing" id="a5A-eR-H5L"/>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="trailing" secondItem="9Sr-mB-xQ7" secondAttribute="trailing" id="b7d-bT-v5i"/>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="leading" secondItem="9Sr-mB-xQ7" secondAttribute="leading" id="gVR-2I-Diu"/>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="bottom" secondItem="9Sr-mB-xQ7" secondAttribute="bottom" id="vZf-Uf-Zav"/>
-                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="top" secondItem="9Sr-mB-xQ7" secondAttribute="top" id="xXi-9u-2ye"/>
+                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="leading" secondItem="zOt-S3-YEz" secondAttribute="leading" id="Nd2-zs-DBs"/>
+                            <constraint firstAttribute="trailing" secondItem="T6N-Vm-RGp" secondAttribute="trailing" id="X0y-HN-lq1"/>
+                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="top" secondItem="9Sr-mB-xQ7" secondAttribute="top" id="Y0D-CR-67b"/>
+                            <constraint firstItem="T6N-Vm-RGp" firstAttribute="bottom" secondItem="9Sr-mB-xQ7" secondAttribute="bottom" id="j57-Oy-bYe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Sr-mB-xQ7"/>
                     </view>
@@ -277,6 +289,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dayCareNameLabel" destination="lUu-mN-eDi" id="295-5w-Iyp"/>
                         <outlet property="detailsTextView" destination="dsr-Xp-22E" id="T8U-j2-4sa"/>
                         <outlet property="nameAndAgeTextView" destination="sBq-t6-a0s" id="37a-MQ-2ow"/>
                         <outlet property="scrollView" destination="T6N-Vm-RGp" id="8EH-jO-cZU"/>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C9FB6C521B3459C002472D9 /* Enrollment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FB6C421B3459C002472D9 /* Enrollment.swift */; };
+		5C9FB6CA21B348FC002472D9 /* EnrollmentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FB6C921B348FC002472D9 /* EnrollmentsCollectionViewController.swift */; };
 		7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30FEDC218540BA00C4DA06 /* APIModel.swift */; };
 		7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3832632179403300A551A3 /* NewDayCareViewController.swift */; };
 		7F4389C521A4D9A2002C430D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4389C421A4D9A2002C430D /* UserTests.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C9FB6C421B3459C002472D9 /* Enrollment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enrollment.swift; sourceTree = "<group>"; };
+		5C9FB6C921B348FC002472D9 /* EnrollmentsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentsCollectionViewController.swift; sourceTree = "<group>"; };
 		7F30FEDC218540BA00C4DA06 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		7F3832632179403300A551A3 /* NewDayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayCareViewController.swift; sourceTree = "<group>"; };
 		7F4389C421A4D9A2002C430D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -120,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C9FB6C821B348E1002472D9 /* Enrollments */ = {
+			isa = PBXGroup;
+			children = (
+				5C9FB6C921B348FC002472D9 /* EnrollmentsCollectionViewController.swift */,
+			);
+			path = Enrollments;
+			sourceTree = "<group>";
+		};
 		7F2E9FF1217FB24700615BEF /* DayCares */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 		7FA4B736213CBD100085E5D8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C9FB6C821B348E1002472D9 /* Enrollments */,
 				7F2E9FF1217FB24700615BEF /* DayCares */,
 				7FBDE4EA21AB80F900E51805 /* Kids */,
 				7F2E9FF2217FB25E00615BEF /* Users */,
@@ -229,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				7F30FEDC218540BA00C4DA06 /* APIModel.swift */,
+				5C9FB6C421B3459C002472D9 /* Enrollment.swift */,
 				7FA4B738213CBD310085E5D8 /* DayCare.swift */,
 				7F9D48C821ACE26F0049FDDA /* Kid.swift */,
 				7FF6C7D321A280B9009521ED /* User.swift */,
@@ -423,7 +437,9 @@
 				7F74844521AE4E6A00230885 /* MKMapView.swift in Sources */,
 				7FC01AE021A607D0009D0589 /* String.swift in Sources */,
 				7FA4B73D213CBDD20085E5D8 /* DayCaresCollectionViewCell.swift in Sources */,
+				5C9FB6C521B3459C002472D9 /* Enrollment.swift in Sources */,
 				7F9D48CB21ACE5590049FDDA /* KidsCollectionViewCell.swift in Sources */,
+				5C9FB6CA21B348FC002472D9 /* EnrollmentsCollectionViewController.swift in Sources */,
 				7FA4B739213CBD310085E5D8 /* DayCare.swift in Sources */,
 				7FBDE4EC21AB810D00E51805 /* KidsCollectionViewController.swift in Sources */,
 				7FA4B70B213CBC9F0085E5D8 /* DayCaresCollectionViewController.swift in Sources */,

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Jared Payne. All rights reserved.
 //
 
+import Foundation
+
 public class Kid: APIModel {
     
     public var id: Int32?
@@ -24,9 +26,23 @@ public class Kid: APIModel {
     
     public var userId: Int?
     
+    public var enrollment: Enrollment?
+    
     public var name: String? {
         guard let firstName = self.firstName else { return nil }
         guard let lastName = self.lastName else { return nil }
         return firstName + " " + lastName
+    }
+    
+    public func getEnrollment(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
+        Enrollment.all {data, response, error in
+            if (response as? HTTPURLResponse)?.statusCode == 200 {
+                let enrollments = API.decode([Enrollment].self, from: data!)
+                self.enrollment = enrollments.first {$0.kidId == self.id!}
+            }
+            if let handler = completionHandler {
+                handler(data, response, error)
+            }
+        }
     }
 }

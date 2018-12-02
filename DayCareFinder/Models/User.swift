@@ -78,7 +78,7 @@ public class User: APIModel {
         } .resume()
     }
     
-    public func getDayCare(completionHandler: ((Data?, URLResponse?, Error?) -> ())?) {
+    public func getDayCare(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         DayCare.all { data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 200 {
                 let dayCares = API.decode([DayCare].self, from: data!)
@@ -90,7 +90,7 @@ public class User: APIModel {
         }
     }
     
-    public func getKids(completionHandler: ((Data?, URLResponse?, Error?) -> ())?) {
+    public func getKids(completionHandler: ((Data?, URLResponse?, Error?) -> ())? = nil) {
         Kid.all { data, response, error in
             if (response as? HTTPURLResponse)?.statusCode == 200 {
                 self.kids = API.decode([Kid].self, from: data!)
