@@ -44,6 +44,7 @@ public class DayCareViewController: UIViewController {
         self.reloadData()
     }
     
+    //segue to enrollments view
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "NewEnrollment":
@@ -74,6 +75,7 @@ public class DayCareViewController: UIViewController {
         UIApplication.shared.open(self.dayCare!.phoneNumberURL!)
     }
     
+    //declaration
     @IBAction public func unwindToDayCareViewController(segue: UIStoryboardSegue) {
     }
     
