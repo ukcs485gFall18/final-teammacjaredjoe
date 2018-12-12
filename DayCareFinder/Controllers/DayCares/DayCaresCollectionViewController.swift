@@ -116,7 +116,5 @@ extension UICollectionViewController {
         self.backgroundView = messageLabel;
     }
     
-    func restore() {
-        self.backgroundView = nil
-    }
+   /
 }
