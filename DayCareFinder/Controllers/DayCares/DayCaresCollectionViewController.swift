@@ -26,7 +26,7 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     func UICollectionView(_ UICollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         if (self.dayCares.count == 0) {
-            UICollectionView.setEmptyMessage("Your Search Did Not Return Any Results")
+            UICollectionView.setEmptyMessage("Your Search Did Not Return Any Daycares")
         } else {
             UICollectionView.restore()
         }

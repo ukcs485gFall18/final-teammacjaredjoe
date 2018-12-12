@@ -26,6 +26,11 @@ public class NewDayCareViewController: UIViewController {
         self.createDayCare()
     }
     
+    @IBAction func submitButtonWasTouched(_ sender: UIButton) {
+        self.createDayCare()
+    }
+    
+    
     private func createDayCare() {
         let dayCare = DayCare()
         dayCare.name = self.nameTextField.text!

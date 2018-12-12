@@ -20,12 +20,30 @@ public class NewKidViewController: UIViewController {
     
     @IBOutlet public weak var detailsTextView: UITextView!
     
+
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.textViewDidEndEditing(self.detailsTextView)
     }
     
     @IBAction func doneButtonWasTouched(_ sender: UIBarButtonItem) {
+        let kid = Kid()
+        kid.firstName = self.firstNameTextField.text!
+        kid.lastName = self.lastNameTextField.text!
+        kid.age = Int(self.ageTextField.text!)!
+        kid.details = self.detailsTextView.text!
+        UIApplication.shared.beginWaitingForNetworkResponse()
+        kid.post { data, response, error in
+            UIApplication.shared.endWaitingForNetworkResponse()
+            if (response as? HTTPURLResponse)?.statusCode == 201 {
+                DispatchQueue.main.async {
+                    super.performSegue(withIdentifier: "Index", sender: nil)
+                }
+            }
+        }
+    }
+    
+    @IBAction func saveChildButtonWasTouched(_ sender: UIButton) {
         let kid = Kid()
         kid.firstName = self.firstNameTextField.text!
         kid.lastName = self.lastNameTextField.text!

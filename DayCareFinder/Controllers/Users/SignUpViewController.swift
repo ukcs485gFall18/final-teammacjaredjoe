@@ -20,6 +20,10 @@ public class SignUpViewController: UIViewController {
         self.signUpUser()
     }
     
+    @IBAction func submitButtonWasPressed(_ sender: UIButton) {
+        self.signUpUser()
+    }
+    
     private func signUpUser() {
         let user = User()
         user.email = self.emailTextField.text!

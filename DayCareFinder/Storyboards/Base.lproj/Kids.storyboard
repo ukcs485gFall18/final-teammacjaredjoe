@@ -116,6 +116,16 @@
                                     <outlet property="delegate" destination="qgS-zI-rER" id="eZS-aH-QKA"/>
                                 </connections>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i98-32-Pjr">
+                                <rect key="frame" x="16" y="337" width="343" height="43"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save Child">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveChildButtonWasTouched:" destination="qgS-zI-rER" eventType="touchUpInside" id="XV1-cy-c1S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -129,6 +139,7 @@
                             <constraint firstItem="S53-82-y47" firstAttribute="leading" secondItem="ydL-SA-Ygg" secondAttribute="leading" constant="16" id="TkX-Ai-nxZ"/>
                             <constraint firstItem="1Gz-Ek-5O7" firstAttribute="top" secondItem="tnD-lo-gV9" secondAttribute="bottom" constant="8" id="Yup-Ze-cOW"/>
                             <constraint firstItem="tnD-lo-gV9" firstAttribute="top" secondItem="ydL-SA-Ygg" secondAttribute="top" constant="16" id="b39-2w-dcf"/>
+                            <constraint firstItem="i98-32-Pjr" firstAttribute="centerX" secondItem="ydL-SA-Ygg" secondAttribute="centerX" id="g08-VQ-LGq"/>
                             <constraint firstItem="ydL-SA-Ygg" firstAttribute="trailing" secondItem="Q8r-8w-d7G" secondAttribute="trailing" constant="16" id="g50-F1-zpB"/>
                             <constraint firstItem="Q8r-8w-d7G" firstAttribute="leading" secondItem="ydL-SA-Ygg" secondAttribute="leading" constant="16" id="sGl-kY-EX1"/>
                             <constraint firstItem="ydL-SA-Ygg" firstAttribute="trailing" secondItem="1Gz-Ek-5O7" secondAttribute="trailing" constant="16" id="utE-8m-odN"/>
@@ -158,7 +169,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bom-a1-pjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mi9-ZD-mgp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2458" y="680"/>
+            <point key="canvasLocation" x="2456.8000000000002" y="679.61019490254876"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8wb-1S-WQl">
