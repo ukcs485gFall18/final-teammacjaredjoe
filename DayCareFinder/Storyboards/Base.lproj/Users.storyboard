@@ -39,9 +39,13 @@
                                     <outlet property="delegate" destination="HQf-aK-yoe" id="bZJ-xD-M3e"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="depositphotos_126565934-stock-photo-circle-made-of-painted-hands" highlightedImage="depositphotos_126565934-stock-photo-circle-made-of-painted-hands" translatesAutoresizingMaskIntoConstraints="NO" id="bkU-Ve-S1O">
+                                <rect key="frame" x="67" y="106" width="240" height="146"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Swo-AA-awh" firstAttribute="top" secondItem="bkU-Ve-S1O" secondAttribute="bottom" constant="40" id="076-X7-ytb"/>
                             <constraint firstItem="HSq-0e-SgV" firstAttribute="centerX" secondItem="oaz-bq-npQ" secondAttribute="centerX" id="28i-J9-n8G"/>
                             <constraint firstItem="KQO-No-WaA" firstAttribute="trailing" secondItem="Swo-AA-awh" secondAttribute="trailing" constant="16" id="4el-fI-Pk9"/>
                             <constraint firstItem="KQO-No-WaA" firstAttribute="trailing" secondItem="IkS-OS-2nv" secondAttribute="trailing" constant="16" id="60K-tb-JVs"/>
@@ -171,6 +175,9 @@
             <point key="canvasLocation" x="2533.5999999999999" y="203.74812593703149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="depositphotos_126565934-stock-photo-circle-made-of-painted-hands" width="1024" height="1024"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GKt-ii-ddq"/>
     </inferredMetricsTieBreakers>
