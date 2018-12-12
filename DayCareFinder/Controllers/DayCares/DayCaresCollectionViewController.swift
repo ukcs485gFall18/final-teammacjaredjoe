@@ -24,13 +24,13 @@ public class DayCaresCollectionViewController: UICollectionViewController {
     }
     
     func UICollectionView(_ UICollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+
         if (self.dayCares.count == 0) {
-            self.UICollectionView.setEmptyMessage("Your Search Did Not Return Any Results")
+            UICollectionView.setEmptyMessage("Your Search Did Not Return Any Results")
         } else {
-            self.UICollectionView.restore()
+            UICollectionView.restore()
         }
-        
+
         return self.dayCares.count
     }
     
