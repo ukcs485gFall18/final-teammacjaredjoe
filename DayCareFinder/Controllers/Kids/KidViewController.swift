@@ -48,14 +48,15 @@ public class KidViewController: UIViewController {
     
     @objc private func updateData() {
         self.kid?.get { data, response, error in
-            self.kid!.getEnrollment() {data, response, error in
-                self.kid!.enrollment!.getDayCare() {data, response, error in
-                    DispatchQueue.main.async {
-                        self.reloadData()
-                        self.scrollView.refreshControl!.endRefreshing()
-                    }
-                }
+            guard let kid = self.kid else { return }
+            kid.getEnrollment() { data, response, error in
+                guard let enrollment = kid.enrollment else { return }
+                enrollment.getDayCare()
             }
+        }
+        DispatchQueue.main.async {
+            self.reloadData()
+            self.scrollView.refreshControl!.endRefreshing()
         }
     }
     

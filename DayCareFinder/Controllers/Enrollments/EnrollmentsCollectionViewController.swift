@@ -51,7 +51,6 @@ public class EnrollmentsCollectionViewController: UICollectionViewController {
         }
     }
     
-    
     @objc private func updateData() {
         User.currentUser!.getKids() { data, response, error in
             self.kids = User.currentUser!.kids ?? []
