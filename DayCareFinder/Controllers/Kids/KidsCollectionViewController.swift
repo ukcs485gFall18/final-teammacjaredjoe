@@ -60,4 +60,14 @@ public class KidsCollectionViewController: UICollectionViewController {
     @IBAction public func unwindToKidsCollectionViewController(segue: UIStoryboardSegue) {
         self.updateData()
     }
-}
+    
+    func UICollectionView(_ UICollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if (self.kids.count == 0) {
+            UICollectionView.setEmptyMessage("You do not currently have any children registered")
+        } else {
+            UICollectionView.restore()
+        }
+        
+        return self.kids.count
+    }}
