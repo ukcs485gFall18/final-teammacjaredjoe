@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C9FB6C521B3459C002472D9 /* Enrollment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FB6C421B3459C002472D9 /* Enrollment.swift */; };
 		5C9FB6CA21B348FC002472D9 /* EnrollmentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FB6C921B348FC002472D9 /* EnrollmentsCollectionViewController.swift */; };
+		6524562921C0A53C00630DF7 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524562821C0A53C00630DF7 /* UICollectionView.swift */; };
 		7F30FEDD218540BA00C4DA06 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30FEDC218540BA00C4DA06 /* APIModel.swift */; };
 		7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3832632179403300A551A3 /* NewDayCareViewController.swift */; };
 		7F4389C521A4D9A2002C430D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4389C421A4D9A2002C430D /* UserTests.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		5C9FB6C421B3459C002472D9 /* Enrollment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enrollment.swift; sourceTree = "<group>"; };
 		5C9FB6C921B348FC002472D9 /* EnrollmentsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentsCollectionViewController.swift; sourceTree = "<group>"; };
+		6524562821C0A53C00630DF7 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		7F30FEDC218540BA00C4DA06 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		7F3832632179403300A551A3 /* NewDayCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayCareViewController.swift; sourceTree = "<group>"; };
 		7F4389C421A4D9A2002C430D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				7F74844421AE4E6A00230885 /* MKMapView.swift */,
 				7FE4E3E921A9DC01006455D0 /* UIApplication.swift */,
 				7F4389C721A4E0AD002C430D /* URLRequest.swift */,
+				6524562821C0A53C00630DF7 /* UICollectionView.swift */,
 				7FC01ADF21A607D0009D0589 /* String.swift */,
 			);
 			path = Extensions;
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6524562921C0A53C00630DF7 /* UICollectionView.swift in Sources */,
 				7FE4E3EA21A9DC01006455D0 /* UIApplication.swift in Sources */,
 				7F3832642179403300A551A3 /* NewDayCareViewController.swift in Sources */,
 				7F7CAD2E2176BF3000085BA8 /* DayCareViewController.swift in Sources */,
